@@ -80,6 +80,16 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className="w-full h-auto flex justify-center mb-16">
+        <img
+          src="https://www.bodybuilding.com/images/2021/march/what-is-the-best-5-day-workout-split-header-960x540.jpg"
+          alt="gym"
+          className="object-cover object-center"
+        />
+      </div>
+      <h1 class="mt-2 text-3xl font-extrabold text-tq1 sm:text-4xl mb-3 text-center">
+        Descobre mais +
+      </h1>
       <section className="bg-tq1">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">

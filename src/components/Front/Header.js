@@ -41,6 +41,18 @@ export default function Header() {
           </button>
         </Link>
 
+        <Link to="/classes" className="">
+          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+            Aulas
+          </button>
+        </Link>
+
+        <Link to="/treiners" className="">
+          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+            Trainers
+          </button>
+        </Link>
+
         <Link to="/dashboard" className="mr-24">
           <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
             Dashboard
