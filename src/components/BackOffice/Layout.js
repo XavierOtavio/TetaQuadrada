@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 
 export default function Layout() {
   return (
-    <div className="inset-0 absolute">
+    <div className="absolute inset-0">
       <div className="absolute inset-y-0 w-48">
         <Header />
       </div>

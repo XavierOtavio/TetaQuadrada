@@ -4,7 +4,7 @@ import LayoutFront from "./components/FrontOffice/Layout";
 import Home from "./components/FrontOffice/Home";
 import LayoutBack from "./components/BackOffice/Layout";
 import Dashboard from "./components/BackOffice/Dashboard";
-import ManageClasses from "./components/ManageClasses";
+import ManageClasses from "./components/BackOffice/ManageClasses";
 
 function App() {
   return (
