@@ -41,15 +41,27 @@ export default function Header() {
           </button>
         </Link>
 
+        <Link to="/blog" className="">
+          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+            Blog
+          </button>
+        </Link>
+
         <Link to="/classes" className="">
           <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
             Aulas
           </button>
         </Link>
 
-        <Link to="/treiners" className="">
+        <Link to="/trainers" className="">
           <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
-            Trainers
+            Treinadores
+          </button>
+        </Link>
+
+        <Link to="/about" className="">
+          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+            Sobre nós
           </button>
         </Link>
 
@@ -94,42 +106,35 @@ export default function Header() {
                 openMenu ? "" : "hidden"
               }  mt-2 w-56 divide-y divide-gray-100 rounded-lg bg-white text-left shadow`}
             >
-              <div className="py-2">
-                <FontAwesomeIcon
-                  icon={faAngleDown}
-                  color="black"
-                  size="lg"
-                  className="ml-48 -mt-8"
-                />
-                <p className="block px-4 py-2 text-xs text-gray-500">
-                  @EngXavierOtávio
-                </p>
+              <div className="flex items-center justify-between px-4 py-2">
+                <p className="text-xs text-gray-500">@EngXavierOtávio</p>
+                <FontAwesomeIcon icon={faAngleDown} color="black" size="lg" />
               </div>
-              <ul className="py-2 text-sm text-gray-700">
+              <ul className="text-sm text-gray-700">
                 <li>
                   <Link
                     to="/bookings"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="inline-flex items-center justify-start w-full gap-2 px-4 py-2 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon
                       icon={faBookmark}
                       color="black"
-                      className="mx-2"
+                      className="w-6"
                     />
                     As minhas reservas
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/cart"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    to="/user"
+                    className="inline-flex items-center justify-start w-full gap-2 px-4 py-2 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon
-                      icon={faCartShopping}
+                      icon={faGear}
                       color="black"
-                      className="mx-2"
+                      className="w-6"
                     />
-                    O meu carrinho
+                    O meu perfil
                   </Link>
                 </li>
               </ul>
@@ -143,7 +148,7 @@ export default function Header() {
                     color="black"
                     className="mx-2"
                   />
-                  Login com outra conta
+                  Sair
                 </Link>
               </div>
             </div>

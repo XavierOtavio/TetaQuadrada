@@ -1,19 +1,23 @@
 import React from "react";
-import Home from "./components/Front/Home";
-import { Route, Routes } from "react-router";
-import Layout from "./components/Front/Layout";
-import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import LayoutFront from "./components/FrontOffice/Layout";
+import Home from "./components/FrontOffice/Home";
+import LayoutBack from "./components/BackOffice/Layout";
+import Dashboard from "./components/BackOffice/Dashboard";
+import ManageClasses from "./components/ManageClasses";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LayoutFront />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="/dashboard" element={<LayoutBack />}>
+          <Route index element={<Dashboard />} />
+          <Route path="classes" element={<ManageClasses />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
