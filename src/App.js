@@ -5,6 +5,7 @@ import Home from "./components/FrontOffice/Home";
 import LayoutBack from "./components/BackOffice/Layout";
 import Dashboard from "./components/BackOffice/Dashboard";
 import ManageClasses from "./components/BackOffice/ManageClasses";
+import AddEditClass from "./components/BackOffice/AddEditClass"
 import Aulas from "./components/FrontOffice/Aulas";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/dashboard" element={<LayoutBack />}>
           <Route index element={<Dashboard />} />
           <Route path="classes" element={<ManageClasses />} />
+          <Route path="classes/:id" element={<AddEditClass />} />
         </Route>
       </Routes>
     </div>

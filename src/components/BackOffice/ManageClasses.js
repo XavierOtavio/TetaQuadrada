@@ -1,7 +1,217 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch,
+  faCalendarDays,
+  faEye,
+  faTrash,
+  faCaretLeft,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import { format, addMinutes } from "date-fns";
+
+import { Link } from "react-router-dom";
+
 export default function ManageClasses() {
+  let classes = [
+    {
+      id: "0001",
+      classType: "Natação",
+      Photo:
+        "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
+      name: "Natação Livre",
+      schedule: [
+        ["monday", 18],
+        ["tuesday", 18],
+        ["wednesday", 18],
+      ],
+      duration: 60,
+    },
+    {
+      id: "0002",
+      classType: "Natação",
+      Photo:
+        "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
+      name: "Ginastica Hídrica ",
+      schedule: [
+        ["monday", 18],
+        ["tuesday", 18],
+        ["wednesday", 18],
+      ],
+      duration: 45,
+    },
+    {
+      id: "0003",
+      classType: "Cardio",
+      Photo:
+        "https://petersfitnessgym.com/wp-content/uploads/2020/06/classe-cycling.jpg",
+      name: "Cycling",
+      schedule: [
+        ["monday", 16],
+        ["tuesday", 16],
+        ["wednesday", 19],
+      ],
+      duration: 55,
+    },
+    {
+      id: "0004",
+      classType: "Cardio",
+      Photo:
+        "https://media.istockphoto.com/id/1211637179/pt/foto/two-girls-doing-step-aerobics-in-the-gym.jpg?s=1024x1024&w=is&k=20&c=cFBkshSncF5CZUDFN9_t3A0DrUp2CFSoJpDf2e1zG0k=",
+      name: "Steping",
+      schedule: [
+        ["monday", 16],
+        ["tuesday", 16],
+        ["wednesday", 17],
+      ],
+      duration: 30,
+    },
+    {
+      id: "0005",
+      classType: "Combate",
+      Photo:
+        "https://previous-assets.womenshealth.pt/files/2019/10/iStock-1126503889.jpg",
+      name: "kickboxing",
+      schedule: [
+        ["monday", 16],
+        ["tuesday", 16],
+        ["wednesday", 17],
+      ],
+      duration: 90,
+    },
+    {
+      id: "0006",
+      classType: "Musculação",
+      Photo:
+        "https://static.tuasaude.com/media/article/sk/cj/hipertrofia-muscular_31254_l.jpg",
+      name: "Hipertrofia",
+      schedule: [
+        ["monday", 16],
+        ["tuesday", 16],
+        ["wednesday", 17],
+      ],
+      duration: 60,
+    },
+  ];
+  const scheduleFormater = (train) => {
+    const schedule = train.schedule;
+    let days = {
+      monday: "Segunda",
+      tuesday: "Terça",
+      wednesday: "Quarta",
+      thursday: "Quinta",
+      friday: "Sexta",
+      saturday: "Sábado",
+      sunday: "Domingo",
+    };
+    let formatedSchedule = [];
+    schedule.forEach((day) => {
+      formatedSchedule.push(
+        `${days[day[0]]} das ${day[1]}:00h às  ${
+          day[1] + Math.floor(train.duration / 60)
+        }:${
+          train.duration % 60 < 10
+            ? "0" + (train.duration % 60)
+            : train.duration % 60
+        }h`
+      );
+    });
+    return formatedSchedule.join("\n");
+  };
+
   return (
-    <div className="flex h-full flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold">Aulas</h1>
+    <div className="grid h-full w-full grid-cols-12 grid-rows-6 items-start gap-10 py-10">
+      <div className="col-start-2 col-end-12 row-start-1 row-end-2 h-full">
+        <div className="bg-thc3 inline-flex h-full w-full items-center justify-between rounded-xl bg-tq2 p-8 px-10 shadow-inner ">
+          <div className="flex h-full w-full items-center">
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-thc2 absolute ml-2 h-6 w-6"
+            />
+            <input
+              className="focus:ring-thc2 flex h-10 w-64 items-center rounded border border-tq1 bg-white pl-10 text-sm font-normal text-tq1 focus:outline-none focus:ring"
+              placeholder="Por id ou nome do cliente"
+            />
+          </div>
+
+          <div className="flex h-full w-full items-center justify-end">
+            <Link to={`/dashboard/classes/${null}`} state={{ data: null }}>
+              <button
+                type="button"
+                className="relative flex h-10 w-32 items-center rounded border border-tq1 bg-white px-3 text-sm font-normal text-tq1 shadow"
+              >
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="absolute right-0 mr-3 h-6 w-6"
+                />
+                Adicionar
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="col-start-2 col-end-12 row-start-2 row-end-7">
+        <table className="bg-thc4 h-full w-full divide-y-2 rounded-xl bg-tq2 p-8 text-sm shadow-inner">
+          <thead>
+            <tr>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium  text-tq1">
+                ID
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                {" "}
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Categoria
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Nome
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Horário
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Ações
+              </th>
+            </tr>
+          </thead>
+          <tbody className="text-left">
+            {classes.map((training) => (
+              <tr key={training.id} className="border-b">
+                <td className="whitespace-nowrap px-4 py-2">{training.id}</td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  <img
+                    src={training.Photo}
+                    alt={training.id}
+                    className="h-16 w-16 rounded-full"
+                  />
+                </td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  {training.classType}
+                </td>
+                <td className="whitespace-nowrap px-4 py-2">{training.name}</td>
+                <td className="whitespace-break-spaces px-4 py-2">
+                  {scheduleFormater(training)}
+                </td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  <Link
+                    to={"/dashboard/classes/" + training.id}
+                    state={{ data: training }}
+                  >
+                    <FontAwesomeIcon
+                      icon={faEye}
+                      className="h-6 w-6 cursor-pointer text-blue-700"
+                    />
+                  </Link>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="ml-2 h-6 w-6 cursor-pointer text-red-700"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
