@@ -5,6 +5,7 @@ import Home from "./components/FrontOffice/Home";
 import LayoutBack from "./components/BackOffice/Layout";
 import Dashboard from "./components/BackOffice/Dashboard";
 import ManageClasses from "./components/BackOffice/ManageClasses";
+import Aulas from "./components/FrontOffice/Aulas";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutFront />}>
           <Route index element={<Home />} />
+          <Route path="classes" element={<Aulas />} />
         </Route>
         <Route path="/dashboard" element={<LayoutBack />}>
           <Route index element={<Dashboard />} />

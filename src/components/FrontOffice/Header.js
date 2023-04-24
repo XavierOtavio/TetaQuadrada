@@ -13,6 +13,7 @@ import {
   faBookBookmark,
   faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
+import logo from "../images/logo.svg";
 
 export default function Header() {
   const location = useLocation();
@@ -22,51 +23,53 @@ export default function Header() {
     <div className=" flex h-24 items-center justify-center bg-tq1">
       <Link
         to="/"
-        className="ml-3 flex h-full w-auto justify-start align-baseline "
+        className="ml-3 flex h-full w-auto justify-start py-0.5 align-baseline "
       >
-        <img
-          src="https://centralinaaging.org/wp-content/uploads/2021/03/Your-Logo-here.png"
-          alt="logo-01"
-          border="0"
-        />
+        <img src={logo} alt="logo-01" border="0" />
       </Link>
       <div className="ml-2 mr-3 flex w-full justify-end align-baseline">
         <Link to="/">
           <button
             className={`${
               location.pathname === "/" ? "bg-tq4 text-white" : "text-tq2"
-            } ml-2 block rounded px-10 py-3 font-medium hover:border-thc1 hover:bg-thc1 hover:text-white`}
+            } hover:border-thc1 hover:bg-thc1 ml-2 block rounded px-10 py-3 font-medium hover:text-white`}
           >
             Home
           </button>
         </Link>
 
         <Link to="/blog" className="">
-          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+          <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
             Blog
           </button>
         </Link>
 
         <Link to="/classes" className="">
-          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+          <button
+            className={`${
+              location.pathname === "/classes"
+                ? "bg-tq4 text-white"
+                : "text-tq2"
+            } hover:border-thc1 hover:bg-thc1 ml-2 block rounded px-10 py-3 font-medium hover:text-white`}
+          >
             Aulas
           </button>
         </Link>
 
         <Link to="/trainers" className="">
-          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+          <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
             Treinadores
           </button>
         </Link>
 
         <Link to="/about" className="">
-          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+          <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
             Sobre nós
           </button>
         </Link>
 
         <Link to="/dashboard" className="mr-24">
-          <button class="ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:border-thc1 hover:bg-tq4 hover:text-white">
+          <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
             Dashboard
           </button>
         </Link>
@@ -114,7 +117,7 @@ export default function Header() {
                 <li>
                   <Link
                     to="/bookings"
-                    className="inline-flex items-center justify-start w-full gap-2 px-4 py-2 hover:bg-gray-100"
+                    className="inline-flex w-full items-center justify-start gap-2 px-4 py-2 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon
                       icon={faBookmark}
@@ -127,7 +130,7 @@ export default function Header() {
                 <li>
                   <Link
                     to="/user"
-                    className="inline-flex items-center justify-start w-full gap-2 px-4 py-2 hover:bg-gray-100"
+                    className="inline-flex w-full items-center justify-start gap-2 px-4 py-2 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon
                       icon={faGear}

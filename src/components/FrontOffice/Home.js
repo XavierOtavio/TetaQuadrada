@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendarDays,
-  faUserGroup,
-  faMagnifyingGlass,
   faWifi,
   faSquareParking,
   faUtensils,
   faPersonSwimming,
   faDumbbell,
   faBellConcierge,
+  faPersonBiking,
+  faWeightHanging,
+  faLink,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
@@ -21,14 +21,14 @@ function Home() {
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div class="max-w-xl text-center sm:text-left">
-            <h1 class="text-3xl font-extrabold sm:text-5xl text-white">
+            <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
               No pain, no gain
               <strong class="block font-extrabold text-tq4">
                 Gim bros, let's go!
               </strong>
             </h1>
 
-            <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-tq2">
+            <p class="mt-4 max-w-lg text-tq2 sm:text-xl sm:leading-relaxed">
               Entra em forma e sente-te bem, com os nossos treinadores
               experientes e instalações de topo.
             </p>
@@ -41,12 +41,12 @@ function Home() {
                 Vamos começar
               </a>
 
-              <a
-                href="#find"
+              <Link
+                to="/classes"
                 class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-tq1 shadow hover:text-tq2 focus:outline-none focus:ring active:text-tq2 sm:w-auto"
               >
-                Saber Mais
-              </a>
+                Marcar Aulas
+              </Link>
             </div>
           </div>
         </div>
@@ -54,12 +54,12 @@ function Home() {
 
       <div id="start">
         <div class="bg-white">
-          <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-5xl text-center">
               <h1 class="mt-2 text-3xl font-extrabold text-tq1 sm:text-4xl">
                 Estás pronto para ficares em forma e sentires-te bem?
               </h1>
-              <h2 class="mt-4 text-lg  tracking-wide text-gray-500 text-justify">
+              <h2 class="mt-4 text-justify  text-lg tracking-wide text-gray-500">
                 O nosso ginásio oferece uma variedade de aulas e opções de
                 treino para ajudá-lo a atingir os seus objetivos de fitness.
                 Seja para melhorar a sua condição física, construir força ou
@@ -80,21 +80,18 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full h-auto flex justify-center mb-16">
+      <div className="mb-16 flex h-auto w-full justify-center">
         <img
           src="https://www.bodybuilding.com/images/2021/march/what-is-the-best-5-day-workout-split-header-960x540.jpg"
           alt="gym"
           className="object-cover object-center"
         />
       </div>
-      <h1
-        class="mt-2 text-3xl font-extrabold text-tq1 sm:text-4xl mb-3 text-center"
-        id="find"
-      >
-        Descobre mais +
+      <h1 class="mb-3 mt-2 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
+        O nosso Blog
       </h1>
       <section className="bg-tq1">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
             {/* <div class="grid place-content-center rounded bg-gray-100 p-6 sm:p-8">
               <div class="mx-auto max-w-md text-center lg:text-left">
@@ -122,14 +119,14 @@ function Home() {
                 <li>
                   {/* <Link to="#" class="group block"> */}
                   <img
-                    src="https://www.bodybuilding.com/images/2021/march/what-is-the-best-5-day-workout-split-header-960x540.jpg"
+                    src="https://www.lifefitness.com.br/resource/image/801350/landscape_ratio4x3/768/576/8935d766930bd0cd16737674b05662cd/xl/brand-gym-cardio-equipment-treadmill-powermill-860.jpg"
                     alt=""
                     class="aspect-square w-full rounded object-cover"
                   />
 
                   <div class="mt-3">
-                    <h3 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                      Cozinha Deluxe
+                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
+                      Cardio
                     </h3>
                   </div>
                   {/* </Link> */}
@@ -143,8 +140,8 @@ function Home() {
                   />
 
                   <div class="mt-3">
-                    <h3 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                      Cozinha Deluxe
+                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
+                      Treino de Força
                     </h3>
                   </div>
                   {/* </Link> */}
@@ -153,14 +150,14 @@ function Home() {
                 <li>
                   {/* <Link to="#" class="group block"> */}
                   <img
-                    src="https://www.eshoper.in/wp-content/uploads/2021/12/best-kitchen-furniture-latest-design-low-price-furnitures-store-panvel-kamothe-navi-mumbai.jpg"
+                    src="https://static.tuasaude.com/media/article/qj/jh/beneficios-do-yoga_22472_l.jpg"
                     alt=""
                     class="aspect-square w-full rounded object-cover"
                   />
 
                   <div class="mt-3">
-                    <h3 class="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                      Cozinha Cerâmica
+                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
+                      Yoga
                     </h3>
                   </div>
                   {/* </Link> */}
@@ -170,25 +167,24 @@ function Home() {
           </div>
         </div>
       </section>
-      <section class=" flex justify-center">
-        <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+      <section class=" flex justify-center" id="find">
+        <div class="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
           <div class="max-w-xl text-left">
-            <h2 class="text-3xl font-bold sm:text-4xl">
+            <h2 class="text-3xl font-bold sm:text-4xl ">
               Descubra os nossos serviços
             </h2>
 
             <p class="mt-4 font-thin text-gray-500">
-              O nosso hotel oferece uma grande variedade de serviços para que se
-              sinta em casa. Desde o pequeno-almoço até ao serviço de quartos,
-              passando pelo bar e restaurante, temos tudo o que precisa para uma
-              estadia perfeita. Testado e aprovado pelo Selo de Qualidade
-              Turística do senhor doutor Marcelo Rebelo de Sousa.
+              O nosso ginásio oferece uma grande variedade de serviços para que
+              o seu treino seja o mais completo possível. Desde aulas de grupo,
+              a treinos personalizados, temos tudo o que precisa para atingir os
+              seus objetivos.
             </p>
           </div>
 
           <div class="mt-8 grid grid-cols-1 gap-8 text-left md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
             <div class="flex items-start gap-4">
-              <FontAwesomeIcon icon={faWifi} className="h-8 w-8 text-thc1" />
+              <FontAwesomeIcon icon={faWifi} className="text-thc1 h-8 w-8" />
 
               <div>
                 <h2 class="text-lg font-bold">Wi-Fi</h2>
@@ -204,55 +200,59 @@ function Home() {
             <div class="flex items-start gap-4">
               <FontAwesomeIcon
                 icon={faSquareParking}
-                className="h-8 w-8 text-thc1"
+                className="text-thc1 h-8 w-8"
               />
 
               <div>
                 <h2 class="text-lg font-bold">Estacionamento</h2>
 
                 <p class="mt-1 text-sm text-gray-500">
-                  O estacionamento é gratuito para todos os hóspedes do hotel.
-                  Dispõe de 500 lugares de estacionamento subterrâneo, com
-                  vigilancia 24 horas por dia, 7 dias por semana e 365 dias por
-                  ano e acesso directo ao hotel. Acessível apenas a carros,
-                  motas, bicicletas, autocarros, autocaravanas e camiões.
+                  O estacionamento é gratuito apenas para clientes. Dispõe de
+                  500 lugares de estacionamento subterrâneo, com vigilancia 24
+                  horas por dia, 7 dias por semana e 365 dias por ano e acesso
+                  directo ao ginásio. Acessível apenas a carros, motas,
+                  bicicletas, autocarros, autocaravanas e camiões.
                 </p>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
               <FontAwesomeIcon
-                icon={faUtensils}
-                className="h-8 w-8 text-thc1"
+                icon={faPersonBiking}
+                className="text-thc1 h-8 w-8"
               />
 
               <div>
-                <h2 class="text-lg font-bold">Restauração</h2>
+                <h2 class="text-lg font-bold">General Fitness</h2>
 
                 <p class="mt-1 text-sm text-gray-500">
-                  Dispomos de 3 restaurantes, especialistas em gastronomia de
-                  todo o mundo, com uma grande variedade de pratos e bebidas.
-                  Inlcui ainda um bar de cocktails e um bar de snacks.
+                  Se os teus objetivos são melhorar a tua saúde e bem-estar,
+                  temos tudo o que precisas. Temos equipamento de cardio em dois
+                  pisos, incluindo 8 stepmills, 15+ passadeiras, máquinas de
+                  remo, bicicletas de exercício, bicicletas de spinning,
+                  elípticas, treinadores de arco e até uma escada de Jacob. Além
+                  do equipamento de cardio, temos áreas de alongamento com
+                  tapetes, rolos de espuma, bandas, pesos leves e muito mais.
                 </p>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
               <FontAwesomeIcon
-                icon={faPersonSwimming}
-                className="h-8 w-8 text-thc1"
+                icon={faWeightHanging}
+                className="text-thc1 h-8 w-8"
               />
 
               <div>
-                <h2 class="text-lg font-bold">Piscinas</h2>
+                <h2 class="text-lg font-bold">Weight Training</h2>
 
                 <p class="mt-1 text-sm text-gray-500">
-                  Piscinas exteriores e interiores. Horário de funcionamento:
-                  9h00 - 22h00. A piscina exterior está aberta de Abril a
-                  Outubro. Piscinas certificas pela Deco com 5 estrelas pois
-                  cumprem com todos os requisitos de segurança e não apresentam
-                  riscos para a saúde dos utilizadores tais como a presença de
-                  bactérias, fungos, algas, e urina.
+                  De bodybuilding a powerlifting e tudo o que está no meio, o
+                  nosso ginásio tem o equipamento para ajudá-lo a atingir seus
+                  objetivos. Com dumbells até 150lbs, 7 racks de agachamento, 5
+                  plataformas de levantamento de peso morto, 2 bancos de
+                  competição e uma variedade de máquinas carregadas com placas e
+                  pinos, temos tudo o que você precisa.
                 </p>
               </div>
             </div>
@@ -260,11 +260,11 @@ function Home() {
             <div class="flex items-start gap-4">
               <FontAwesomeIcon
                 icon={faDumbbell}
-                className="h-8 w-8 text-thc1"
+                className="text-thc1 h-8 w-8"
               />
 
               <div>
-                <h2 class="text-lg font-bold">Ginásio</h2>
+                <h2 class="text-lg font-bold">Functional Training</h2>
 
                 <p class="mt-1 text-sm text-gray-500">
                   O ginásio está aberto 24 horas por dia, 7 dias por semana e
@@ -277,25 +277,24 @@ function Home() {
             </div>
 
             <div class="flex items-start gap-4">
-              <FontAwesomeIcon
-                icon={faBellConcierge}
-                className="h-8 w-8 text-thc1"
-              />
+              <FontAwesomeIcon icon={faLink} className="text-thc1 h-8 w-8" />
 
               <div>
-                <h2 class="text-lg font-bold">Serviço de quartos</h2>
+                <h2 class="text-lg font-bold">Team Training</h2>
 
                 <p class="mt-1 text-sm text-gray-500">
-                  Serviço de quartos extremamente rápido, eficiente e caro.
-                  Ideal para quem quer impressionar a sua cara-metade com uma
-                  garrafa de champanhe e morangos frescos no quarto.
+                  Com 60m de relva, caixas pliométricas empilháveis, bolas de
+                  medicina ponderadas, cordas de batalha, racks de agachamento e
+                  plataformas de levantamento de peso morto, a nossa sala de
+                  treino funcional tem todo o equipamento que você precisa para
+                  levar o seu treino para o próximo nível.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="grid grid-cols-2 mb-32">
+      <div class="mb-32 grid grid-cols-2">
         <img
           alt="Les Paul"
           src="https://cdn.shopify.com/s/files/1/0141/5242/t/16/assets/fitsix-4-bright_LIQo.jpg?v=1620121722618"

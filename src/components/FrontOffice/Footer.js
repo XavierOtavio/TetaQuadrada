@@ -5,7 +5,7 @@ export default function Footer() {
     <div>
       <section class="bg-tq1">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-10 lg:px-8">
-          <h2 class="text-center text-4xl font-bold text-white tracking-tight text-thc1 sm:text-5xl">
+          <h2 class="text-thc1 text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
             A opinião dos nossos clientes
           </h2>
           <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
@@ -13,7 +13,7 @@ export default function Footer() {
               <div class="flex items-center gap-4 text-left">
                 <img
                   alt="Man"
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  src="https://img.freepik.com/free-photo/bodybuilder-shows-his-biceps_144627-793.jpg?w=2000"
                   class="h-16 w-16 rounded-full object-cover"
                 />
 
@@ -62,24 +62,24 @@ export default function Footer() {
                   </div>
 
                   <p class="mt-1 text-lg font-medium text-gray-800">
-                    Jéssica Fernandes
+                    Matias Nunes
                   </p>
                 </div>
               </div>
 
-              <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-800">
-                O quarto estava bem equipado e super confortável. A piscina do
-                hotel é muito agradável, com dois espaços separados, uma área de
-                piscina e outra área de repouso. Fomos muito bem recebidos e
-                sentimo-nos completamente à vontade. Sem dúvida a repetir numa
-                outra oportunidade
+              <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
+                "O ginásio é incrível! As instalações são excelentes e a equipe
+                é muito acolhedora e atenciosa. O ambiente é descontraído e não
+                intimidador, o que me ajudou a me sentir mais à vontade enquanto
+                me exercito. As aulas são muito motivantes e os treinadores são
+                muito profissionais e bem treinados. Definitivamente recomendo!"
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
-                  src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  src="https://i2-prod.dailystar.co.uk/incoming/article15591240.ece/ALTERNATES/s1200b/2_RONNIE-COLEMAN-BODYBUILDER-839493.jpg"
                   class="h-16 w-16 rounded-full object-cover"
                 />
 
@@ -131,17 +131,20 @@ export default function Footer() {
                 </div>
               </div>
 
-              <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-800">
-                Adorei o espaço, muito aconchegante e agradável. A localização é
-                ótima, perto de tudo. ATM no hotel. Restaurante com ótima
-                steakhouse. O atendimento foi muito bom. Recomendo muito!
+              <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
+                "Eu amo vir a este ginásio! A variedade de equipamentos é
+                excelente e sempre há algo novo para experimentar. Os
+                instrutores de aula são fantásticos e sempre incentivam os
+                membros a se desafiarem. A equipe é muito prestativa e sempre
+                está disposta a ajudar com quaisquer perguntas ou dúvidas que eu
+                tenha. Não posso recomendar o suficiente!"
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
-                  src="https://images.unsplash.com/photo-1556474835-b0f3ac40d4d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                  src="https://img.freepik.com/vetores-premium/bodybuilder-treinador-rigoroso_701900-17.jpg?w=2000"
                   class="h-16 w-16 rounded-full object-cover"
                 />
 
@@ -195,10 +198,13 @@ export default function Footer() {
                 </div>
               </div>
 
-              <p class="line-clamp-2 sm:line-clamp-none mt-4 text-gray-800">
-                Best hotel in the city. I love the view and the staff is very
-                friendly. The food is the best I have ever tasted. I will
-                definitely come back. Thank you for the great service.
+              <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
+                "Adorei a atmosfera deste ginásio. É sempre limpo e bem
+                organizado. Os instrutores de aula são muito simpáticos e
+                encorajadores, o que me ajudou a alcançar meus objetivos de
+                fitness. Também gostei de poder usar o aplicativo do ginásio
+                para agendar aulas e monitorar meu progresso. Definitivamente
+                vou renovar minha adesão!"
               </p>
             </blockquote>
           </div>
