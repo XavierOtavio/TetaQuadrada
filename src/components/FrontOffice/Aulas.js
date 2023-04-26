@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const week = [
   {
@@ -286,9 +288,24 @@ const activities = [
 ];
 
 function Aulas() {
+  const [selectedActivity, setSelectedActivity] = useState("todas");
+
+  const onActChange = (e) => {
+    if (e !== "todas") {
+      setSelectedActivity(e);
+    } else {
+      setSelectedActivity("todas");
+    }
+  };
+
+  useEffect(() => {
+    console.log("selectedActivity");
+    console.log(selectedActivity);
+  }, [selectedActivity]);
+
   return (
     <div>
-      <div className="mx-32 mb-24">
+      <div className="mb-24 px-32">
         <h1 class="my-10 mb-16 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
           {" "}
           Marcar Aulas
@@ -303,6 +320,7 @@ function Aulas() {
                 id="todas"
                 class="peer sr-only"
                 defaultChecked
+                onClick={() => onActChange("todas")}
               />
               <span class="group inline-block rounded px-10 py-3 text-sm font-medium text-tq1 outline outline-1 outline-tq1 transition hover:scale-125 peer-checked:bg-tq1 peer-checked:text-white">
                 Todas
@@ -315,6 +333,7 @@ function Aulas() {
                   name="activitie"
                   id={activitie.id}
                   class="peer sr-only"
+                  onClick={() => onActChange(activitie.name)}
                 />
                 <span class="group inline-block rounded px-10 py-3 text-sm font-medium text-tq1 outline outline-1 outline-tq1 transition hover:scale-125 peer-checked:bg-tq1 peer-checked:text-white">
                   {activitie.name}
@@ -325,12 +344,21 @@ function Aulas() {
           <div className="mt-14 grid w-full grid-cols-6 gap-24 text-center">
             {week.map((week) => (
               <div>
-                <div className="">
+                <div className="w-full">
                   <h1 className="mb-5 text-4xl">{week.day}</h1>
                   <div className="flex-col">
                     {week.activities.map((activitie) => (
-                      <div className="flex justify-between">
-                        <button class="m-2 inline-block w-full rounded border px-8 py-3 text-sm font-medium shadow-black/25  transition hover:rotate-2 hover:scale-110 hover:bg-tq2 hover:shadow-md focus:outline-none focus:ring ">
+                      <div className="flex w-full justify-between">
+                        <button
+                          className={`m-2 inline-block w-full justify-between rounded border px-7 py-3 text-sm font-medium shadow-black/25 transition  ${
+                            !(
+                              selectedActivity === "todas" ||
+                              activitie.nome === selectedActivity
+                            )
+                              ? "cursor-not-allowed opacity-20"
+                              : "hover:rotate-2 hover:scale-110 hover:bg-tq2 hover:shadow-md focus:outline-none focus:ring "
+                          }`}
+                        >
                           <div className="flex flex-col">
                             <h1 className="mb-3 text-xl">{activitie.nome}</h1>
                             <h1 className="text-sm text-gray-500">
