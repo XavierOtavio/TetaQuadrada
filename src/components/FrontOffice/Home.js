@@ -1,13 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faWifi,
   faSquareParking,
-  faUtensils,
-  faPersonSwimming,
   faDumbbell,
-  faBellConcierge,
   faPersonBiking,
   faWeightHanging,
   faLink,
@@ -24,7 +20,7 @@ function Home() {
             <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
               No pain, no gain
               <strong class="block font-extrabold text-tq4">
-                Gim bros, let's go!
+                Gim bros, let&apos;s go!
               </strong>
             </h1>
 

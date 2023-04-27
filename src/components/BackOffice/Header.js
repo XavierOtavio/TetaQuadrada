@@ -27,6 +27,9 @@ export default function Header() {
       document.body.removeEventListener("click", handleClickOutside);
     };
   }, []);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   return (
     <div
       className={`h-full absolute left-0 transition-all delay-150 duration-500 flex flex-col justify-between items-center ${
@@ -128,7 +131,7 @@ export default function Header() {
       </div>
       <div
         className="flex items-center gap-4 justify-start w-full rounded-br-lg bg-tq3 hover:bg-yellow-500 p-4 h-12 cursor-pointer"
-        onClick={() => setOpen(!open)}
+        onClick={handleOpen}
       >
         <FontAwesomeIcon
           icon={faChevronRight}

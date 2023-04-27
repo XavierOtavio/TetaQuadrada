@@ -1,5 +1,4 @@
-import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
@@ -68,11 +67,11 @@ export default function Footer() {
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-                "O ginásio é incrível! As instalações são excelentes e a equipe
+              &quot;O ginásio é incrível! As instalações são excelentes e a equipe
                 é muito acolhedora e atenciosa. O ambiente é descontraído e não
                 intimidador, o que me ajudou a me sentir mais à vontade enquanto
                 me exercito. As aulas são muito motivantes e os treinadores são
-                muito profissionais e bem treinados. Definitivamente recomendo!"
+                muito profissionais e bem treinados. Definitivamente recomendo!&quot;
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
@@ -132,12 +131,12 @@ export default function Footer() {
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-                "Eu amo vir a este ginásio! A variedade de equipamentos é
+              &quot;Eu amo vir a este ginásio! A variedade de equipamentos é
                 excelente e sempre há algo novo para experimentar. Os
                 instrutores de aula são fantásticos e sempre incentivam os
                 membros a se desafiarem. A equipe é muito prestativa e sempre
                 está disposta a ajudar com quaisquer perguntas ou dúvidas que eu
-                tenha. Não posso recomendar o suficiente!"
+                tenha. Não posso recomendar o suficiente!&quot;
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
@@ -199,12 +198,12 @@ export default function Footer() {
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-                "Adorei a atmosfera deste ginásio. É sempre limpo e bem
+              &quot;Adorei a atmosfera deste ginásio. É sempre limpo e bem
                 organizado. Os instrutores de aula são muito simpáticos e
                 encorajadores, o que me ajudou a alcançar meus objetivos de
                 fitness. Também gostei de poder usar o aplicativo do ginásio
                 para agendar aulas e monitorar meu progresso. Definitivamente
-                vou renovar minha adesão!"
+                vou renovar minha adesão!&quot;
               </p>
             </blockquote>
           </div>
@@ -220,24 +219,24 @@ export default function Footer() {
             </span>
             <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
               <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">
+                <Link ro="#" class="mr-4 hover:underline md:mr-6 ">
                   Sobre
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">
+                <Link to="#" class="mr-4 hover:underline md:mr-6">
                   Política de Privacidade
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">
+                <Link to="#" class="mr-4 hover:underline md:mr-6">
                   Licenciamento
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" class="hover:underline">
+                <Link to="#" class="hover:underline">
                   Contacto
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

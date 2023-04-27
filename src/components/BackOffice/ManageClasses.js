@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -6,7 +6,7 @@ import {
   faTrash,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import {addMinutes, format} from "date-fns";
+import { addMinutes, format } from "date-fns";
 import { Link } from "react-router-dom";
 
 export default function ManageClasses() {
@@ -17,22 +17,10 @@ export default function ManageClasses() {
       Photo:
         "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
       name: "Natação Livre",
-      schedule: [
-        "monday",
-        "tuesday",
-        "wednesday"
-      ],
-      hours: [
-        "18:00",
-        "18:00",
-        "18:00",
-      ],
+      schedule: ["monday", "tuesday", "wednesday"],
+      hours: ["18:00", "18:00", "18:00"],
       duration: 60,
-      pt: [
-        1000,
-        1001,
-        1000,
-      ]
+      pt: [1000, 1001, 1000],
     },
     {
       id: "0002",
@@ -40,22 +28,10 @@ export default function ManageClasses() {
       Photo:
         "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
       name: "Ginastica Hídrica ",
-      schedule: [
-        "monday",
-        "tuesday",
-        "friday",
-      ],
-      hours: [
-        "18:00",
-        "19:00",
-        "11:00",
-      ],
+      schedule: ["monday", "tuesday", "friday"],
+      hours: ["18:00", "19:00", "11:00"],
       duration: 45,
-      pt: [
-        1000,
-        1002,
-        1001
-      ]
+      pt: [1000, 1002, 1001],
     },
     {
       id: "0003",
@@ -63,22 +39,10 @@ export default function ManageClasses() {
       Photo:
         "https://petersfitnessgym.com/wp-content/uploads/2020/06/classe-cycling.jpg",
       name: "Cycling",
-      schedule: [
-        "tuesday",
-        "thursday",
-        "friday",
-      ],
-      hours: [
-        "12:00",
-       "14:00",
-        "13:00",
-      ],
+      schedule: ["tuesday", "thursday", "friday"],
+      hours: ["12:00", "14:00", "13:00"],
       duration: 55,
-      pt: [
-        1000,
-        1002,
-        1001
-      ]
+      pt: [1000, 1002, 1001],
     },
     {
       id: "0004",
@@ -86,22 +50,10 @@ export default function ManageClasses() {
       Photo:
         "https://media.istockphoto.com/id/1211637179/pt/foto/two-girls-doing-step-aerobics-in-the-gym.jpg?s=1024x1024&w=is&k=20&c=cFBkshSncF5CZUDFN9_t3A0DrUp2CFSoJpDf2e1zG0k=",
       name: "Steping",
-      schedule: [
-        "monday",
-        "tuesday",
-        "saturday",
-      ],
-      hours: [
-        "11:00",
-        "11:00",
-        "11:00",
-      ],
+      schedule: ["monday", "tuesday", "saturday"],
+      hours: ["11:00", "11:00", "11:00"],
       duration: 30,
-      pt: [
-        1000,
-        1002,
-        1001
-      ]
+      pt: [1000, 1002, 1001],
     },
     {
       id: "0005",
@@ -109,22 +61,10 @@ export default function ManageClasses() {
       Photo:
         "https://previous-assets.womenshealth.pt/files/2019/10/iStock-1126503889.jpg",
       name: "kickboxing",
-      schedule: [
-        "monday",
-        "tuesday",
-        "friday",
-      ],
-      hours: [
-        "18:00",
-        "19:00",
-        "11:00",
-      ],
+      schedule: ["monday", "tuesday", "friday"],
+      hours: ["18:00", "19:00", "11:00"],
       duration: 90,
-      pt: [
-        1000,
-        1002,
-        1001
-      ]
+      pt: [1000, 1002, 1001],
     },
     {
       id: "0006",
@@ -132,22 +72,10 @@ export default function ManageClasses() {
       Photo:
         "https://static.tuasaude.com/media/article/sk/cj/hipertrofia-muscular_31254_l.jpg",
       name: "Hipertrofia",
-      schedule: [
-        "monday",
-        "tuesday",
-        "friday",
-      ],
-      hours: [
-        "18:00",
-        "19:00",
-        "11:00",
-      ],
+      schedule: ["monday", "tuesday", "friday"],
+      hours: ["18:00", "19:00", "11:00"],
       duration: 60,
-      pt: [
-        1000,
-        1002,
-        1001
-      ]
+      pt: [1000, 1002, 1001],
     },
   ]);
   const scheduleFormater = (train) => {
@@ -165,11 +93,12 @@ export default function ManageClasses() {
     };
     let formatedSchedule = [];
     schedule.forEach((day, index) => {
-      hour = new Date("01-01-01 " + train.hours[index]);
+      hour = new Date(`01-01-01 ${train.hours[index]}`);
       formatedSchedule.push(
-        `${days[day]} das ${hours[index]}h às  ${
-          format(addMinutes(hour, train.duration), "HH:mm")
-        }h`
+        `${days[day]} das ${hours[index]}h às  ${format(
+          addMinutes(hour, train.duration),
+          "HH:mm"
+        )}h`
       );
     });
     return formatedSchedule.join("\n");
@@ -250,7 +179,7 @@ export default function ManageClasses() {
                 </td>
                 <td className="whitespace-nowrap px-4 py-2">
                   <Link
-                    to={"/dashboard/classes/" + training.id}
+                    to={`/dashboard/classes/${training.id}`}
                     state={{ data: training }}
                   >
                     <FontAwesomeIcon

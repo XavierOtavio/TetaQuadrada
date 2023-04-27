@@ -1,5 +1,3 @@
-import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 
 const week = [
@@ -298,11 +296,6 @@ function Aulas() {
     }
   };
 
-  useEffect(() => {
-    console.log("selectedActivity");
-    console.log(selectedActivity);
-  }, [selectedActivity]);
-
   return (
     <div>
       <div className="mb-24 px-32">
@@ -312,7 +305,6 @@ function Aulas() {
         </h1>
         <div>
           <form className="text-center">
-            {/* hover peer sr-only inline-block rounded border border-current px-16 py-3 text-sm font-medium text-tq1 transition hover:scale-125 hover:bg-tq1 hover:text-white focus:outline-none active:text-tq2 peer-checked:bg-black peer-checked:text-white */}
             <label for="todas" class="cursor-pointer">
               <input
                 type="radio"

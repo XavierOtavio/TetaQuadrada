@@ -356,7 +356,7 @@ export default function AddEditClass() {
             <button
               type="button"
               className="inline-block w-full rounded-lg bg-tq1 px-5 py-3 font-medium text-white sm:w-auto"
-              onClick={(e) => console.log(data)}
+              onClick={() => console.table(data)}
             >
               {id ? "Atualizar" : "Guardar"}
             </button>

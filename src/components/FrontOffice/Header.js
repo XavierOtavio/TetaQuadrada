@@ -1,16 +1,10 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCartShopping,
-  faSearch,
-  faXmark,
   faAngleDown,
-  faUser,
   faGear,
   faArrowRightFromBracket,
-  faBookBookmark,
   faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.svg";
