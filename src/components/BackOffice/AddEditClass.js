@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useLocation } from "react-router";
 
 export default function AddEditClass() {
@@ -11,8 +11,10 @@ export default function AddEditClass() {
       : {
           name: "",
           classType: "",
-          photo: "",
+          Photo: "",
           schedule: [],
+          hours: [],
+          pt: [],
           duration: 0,
         }
   );
@@ -49,6 +51,19 @@ export default function AddEditClass() {
         return "Dia";
     }
   };
+
+  const handleHours = (e, i) => {
+    const hours = [...data.hours];
+    hours[i] = e.target.value;
+    setData({ ...data, hours: hours });
+  };
+
+  const handlePT = (e, i) => {
+    const pt = [...data.pt];
+    pt[i] = e.target.value;
+    setData({ ...data, pt: pt });
+  };
+
   return (
     <div className="flex h-full flex-col items-center justify-center">
       <div className="w-3/4 rounded-lg bg-tq2 p-8 shadow-inner ">
@@ -57,7 +72,10 @@ export default function AddEditClass() {
         </h1>
         <form action="#" className="space-y-4">
           <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
-            <div>
+            <div className="flex flex-col justify-start">
+            <span className="text-xs text-left ml-4">
+                Nome da aula
+              </span>
               <label className="sr-only" for="name">
                 Name
               </label>
@@ -70,13 +88,17 @@ export default function AddEditClass() {
                 onChange={(e) => setData({ ...data, name: e.target.value })}
               />
             </div>
-            <div>
+            <div className="flex flex-col justify-start">
+              <span className="text-xs text-left ml-4">
+                Duração em minutos
+              </span>
               <label className="sr-only" for="name">
                 Duração
               </label>
               <input
                 className="w-full rounded-lg border-gray-200 p-3 text-sm"
                 placeholder="Duração em minutos"
+                value={data.duration}
                 type="number"
                 id="name"
                 min="0"
@@ -204,7 +226,7 @@ export default function AddEditClass() {
 
               <label
                 for="day2"
-                className="peer-checked:border-tq peer-checked:bg-tq block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-black peer-checked:text-white"
+                className="peer-checked:border-tq peer-checked:bg-tq border-gray border-200 block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                 tabindex="0"
               >
                 <span className="text-sm font-medium"> Terça </span>
@@ -223,7 +245,7 @@ export default function AddEditClass() {
               />
               <label
                 for="day3"
-                className="peer-checked:border-tq peer-checked:bg-tq block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-black peer-checked:text-white"
+                className="peer-checked:border-tq peer-checked:bg-tq border-gray border-200 block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                 tabindex="0"
               >
                 <span className="text-sm font-medium"> Quarta </span>
@@ -242,7 +264,7 @@ export default function AddEditClass() {
               />
               <label
                 for="day4"
-                className="peer-checked:border-tq peer-checked:bg-tq block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-black peer-checked:text-white"
+                className="peer-checked:border-tq peer-checked:bg-tq border-gray border-200 block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                 tabindex="0"
               >
                 <span className="text-sm font-medium"> Quinta </span>
@@ -261,7 +283,7 @@ export default function AddEditClass() {
               />
               <label
                 for="day5"
-                className="peer-checked:border-tq peer-checked:bg-tq block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-black peer-checked:text-white"
+                className="peer-checked:border-tq peer-checked:bg-tq border-gray border-200 block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                 tabindex="0"
               >
                 <span className="text-sm font-medium"> Sexta </span>
@@ -280,7 +302,7 @@ export default function AddEditClass() {
               />
               <label
                 for="day6"
-                className="peer-checked:border-tq peer-checked:bg-tq block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-black peer-checked:text-white"
+                className="peer-checked:border-tq peer-checked:bg-tq border-gray border-200 block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                 tabindex="0"
               >
                 <span className="text-sm font-medium"> Sábado </span>
@@ -293,8 +315,8 @@ export default function AddEditClass() {
                 Horário - Mais detalhes
               </p>
               <div>
-                {data.schedule.map((day) => (
-                  <div className="grid grid-cols-1 gap-4 text-left">
+                {data.schedule.map((day, i) => (
+                  <div className="grid grid-cols-1 gap-4 text-left" key={`ID${i}`}>
                     <div className="inline-flex items-center justify-around">
                       <label
                         className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
@@ -308,16 +330,20 @@ export default function AddEditClass() {
                         id="startingHour"
                         type="time"
                         tabindex="-1"
+                        value={data.hours[i]}
                         className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                         name="startingHour"
+                        onChange={(e) => handleHours(e, i)}
                       />
-                      <select className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
+                      <select value={data.pt[i]}
+                        onChange={(e) => handlePT(e, i)}
+                      className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
                         <option selected disabled value="-1">
                           Selecione
                         </option>
-                        <option value="José">José</option>
-                        <option value="Maria">Maria</option>
-                        <option value="Ambrósio">Ambrósio</option>
+                        <option value="1000">José</option>
+                        <option value="1001">Maria</option>
+                        <option value="1002">Ambrósio</option>
                       </select>
                     </div>
                   </div>
