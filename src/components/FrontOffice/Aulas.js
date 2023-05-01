@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, React } from "react";
+import { useNavigate } from "react-router-dom";
+import ClassModal from "./ClassModal";
 
 const week = [
   {
@@ -10,6 +12,7 @@ const week = [
         horaFim: "11:00",
         local: "Pavilhão",
         prof: "João Silva",
+        lotacao: "10/25",
       },
       {
         nome: "Yoga",
@@ -17,6 +20,7 @@ const week = [
         horaFim: "12:00",
         local: "Sala 1",
         prof: "Maria Santos",
+        lotacao: "7/15",
       },
       {
         nome: "Natação",
@@ -24,6 +28,7 @@ const week = [
         horaFim: "12:00",
         local: "Piscina 2",
         prof: "João Silva",
+        lotacao: "5/10",
       },
       {
         nome: "Musculação",
@@ -31,6 +36,7 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "10/25",
       },
       {
         nome: "Natação",
@@ -38,6 +44,7 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 1",
         prof: "Manuel Santos",
+        lotacao: "10/10",
       },
     ],
   },
@@ -50,6 +57,7 @@ const week = [
         horaFim: "11:00",
         local: "Pavilhão",
         prof: "João Silva",
+        lotacao: "10/25",
       },
       {
         nome: "Musculação",
@@ -57,6 +65,7 @@ const week = [
         horaFim: "12:00",
         local: "Pavilhão",
         prof: "Maria Santos",
+        lotacao: "10/30",
       },
       {
         nome: "Combate",
@@ -64,6 +73,7 @@ const week = [
         horaFim: "13:00",
         local: "Sala 3",
         prof: "João Silva",
+        lotacao: "6/14",
       },
       {
         nome: "Musculação",
@@ -71,6 +81,7 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "10/25",
       },
       {
         nome: "Cardio",
@@ -78,6 +89,7 @@ const week = [
         horaFim: "15:00",
         local: "Pavilhão",
         prof: "Manuel Santos",
+        lotacao: "10/25",
       },
       {
         nome: "Natação",
@@ -85,6 +97,7 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 1",
         prof: "João Silva",
+        lotacao: "3/10",
       },
       {
         nome: "Cycling",
@@ -92,6 +105,7 @@ const week = [
         horaFim: "17:00",
         local: "Sala 2",
         prof: "Maria Santos",
+        lotacao: "25/25",
       },
       {
         nome: "Steping",
@@ -325,8 +339,12 @@ const activities = [
   { name: "Steping", for: "steping", id: "steping" },
 ];
 
-function Aulas() {
+function Aulas(props) {
+  const [isLogged, setIsLogged] = props.isLogged;
   const [selectedActivity, setSelectedActivity] = useState("todas");
+  const [openClassModal, setOpenClassModal] = useState(false);
+  const navigate = useNavigate();
+  const [modalData, setModalData] = useState({});
 
   const onActChange = (e) => {
     if (e !== "todas") {
@@ -336,8 +354,26 @@ function Aulas() {
     }
   };
 
+  const handleClassClick = (e) => {
+    if (isLogged) {
+      setModalData(e);
+      setOpenClassModal(true);
+      console.table(e);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div>
+      {openClassModal ? (
+        <div className="absolute z-10 h-screen w-full">
+          <ClassModal
+            openClassModal={[openClassModal, setOpenClassModal]}
+            modalData={[modalData, setModalData]}
+          />
+        </div>
+      ) : null}
       <div className="mb-24 px-32">
         <h1 class="my-10 mb-16 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
           {" "}
@@ -382,7 +418,7 @@ function Aulas() {
                     {week.activities.map((activitie) => (
                       <div className="flex w-full justify-between">
                         <button
-                          onClick={console.log("ola")}
+                          onClick={() => handleClassClick(activitie)}
                           className={`m-2 inline-block w-full justify-between rounded border px-7 py-3 text-sm font-medium shadow-black/25 transition  ${
                             !(
                               selectedActivity === "todas" ||

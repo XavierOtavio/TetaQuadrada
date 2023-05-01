@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [isLogged, setIsLogged] = props.isLogged;
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     setIsLogged(true);
+    navigate(-1);
   };
 
   return (
@@ -44,7 +47,7 @@ function Login(props) {
                 </h1>
               </div>
 
-              <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+              <div class="mt-8 grid grid-cols-6 gap-6">
                 <div class="col-span-6">
                   <label
                     for="Email"
@@ -78,14 +81,12 @@ function Login(props) {
                 </div>
 
                 <div class="col-span-2 sm:flex sm:items-center sm:gap-4">
-                  <Link to="/">
-                    <button
-                      class="hover:border-thc1 block border border-tq4 bg-tq4 px-10 py-3 font-medium text-white hover:bg-white hover:text-tq4"
-                      onClick={handleLogin()}
-                    >
-                      Login
-                    </button>
-                  </Link>
+                  <button
+                    class="hover:border-thc1 block border border-tq4 bg-tq4 px-10 py-3 font-medium text-white hover:bg-white hover:text-tq4"
+                    onClick={handleLogin}
+                  >
+                    Login
+                  </button>
 
                   {/* <p class="mt-4 text-sm text-gray-500 sm:mt-0">
                     Ainda não tem conta?
@@ -97,7 +98,7 @@ function Login(props) {
                     .
                   </p> */}
                 </div>
-              </form>
+              </div>
             </div>
           </main>
         </div>

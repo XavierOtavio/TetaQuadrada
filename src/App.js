@@ -25,7 +25,10 @@ function App() {
           element={<LayoutFront isLogged={[isLogged, setIsLogged]} />}
         >
           <Route index element={<Home />} />
-          <Route path="classes" element={<Aulas />} />
+          <Route
+            path="classes"
+            element={<Aulas isLogged={[isLogged, setIsLogged]} />}
+          />
         </Route>
         <Route
           path="/login"
