@@ -9,30 +9,35 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Pavilhão",
+        prof: "João Silva",
       },
       {
         nome: "Yoga",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Sala 1",
+        prof: "Maria Santos",
       },
       {
         nome: "Natação",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Piscina 2",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 1",
+        prof: "Manuel Santos",
       },
     ],
   },
@@ -44,48 +49,56 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Pavilhão",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Pavilhão",
+        prof: "Maria Santos",
       },
       {
         nome: "Combate",
         horaInicio: "12:00",
         horaFim: "13:00",
         local: "Sala 3",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Cardio",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Pavilhão",
+        prof: "Manuel Santos",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 1",
+        prof: "João Silva",
       },
       {
         nome: "Cycling",
         horaInicio: "16:00",
         horaFim: "17:00",
         local: "Sala 2",
+        prof: "Maria Santos",
       },
       {
         nome: "Steping",
         horaInicio: "18:00",
         horaFim: "19:00",
         local: "Sala 1",
+        prof: "João Silva",
       },
     ],
   },
@@ -97,30 +110,35 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Sala 2",
+        prof: "João Silva",
       },
       {
         nome: "Yoga",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Sala 2",
+        prof: "Maria Santos",
       },
       {
         nome: "RPM",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Sala 1",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 1",
+        prof: "Manuel Santos",
       },
     ],
   },
@@ -132,48 +150,56 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Outdoor",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Pavilhão",
+        prof: "Maria Santos",
       },
       {
         nome: "Combate",
         horaInicio: "12:00",
         horaFim: "13:00",
         local: "Sala 3",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Cardio",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Pavilhão",
+        prof: "Manuel Santos",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 2",
+        prof: "João Silva",
       },
       {
         nome: "Cycling",
         horaInicio: "16:00",
         horaFim: "17:00",
         local: "Sala 2",
+        prof: "Maria Santos",
       },
       {
         nome: "Pilates",
         horaInicio: "18:00",
         horaFim: "19:00",
         local: "Sala 1",
+        prof: "João Silva",
       },
     ],
   },
@@ -185,36 +211,42 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Sala 2",
+        prof: "João Silva",
       },
       {
         nome: "Steping",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Outdoor",
+        prof: "Maria Santos",
       },
       {
         nome: "Cardio",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Sala 1",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 1",
+        prof: "Manuel Santos",
       },
       {
         nome: "Musculação",
         horaInicio: "18:00",
         horaFim: "19:00",
         local: "Pavilhão",
+        prof: "João Silva",
       },
     ],
   },
@@ -226,48 +258,56 @@ const week = [
         horaInicio: "10:00",
         horaFim: "11:00",
         local: "Pavilhão",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "11:00",
         horaFim: "12:00",
         local: "Pavilhão",
+        prof: "Maria Santos",
       },
       {
         nome: "Combate",
         horaInicio: "12:00",
         horaFim: "13:00",
         local: "Sala 3",
+        prof: "João Silva",
       },
       {
         nome: "Musculação",
         horaInicio: "13:00",
         horaFim: "14:00",
         local: "Pavilhão",
+        prof: "Pedro Fernandes",
       },
       {
         nome: "Cardio",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Pavilhão",
+        prof: "Manuel Santos",
       },
       {
         nome: "Natação",
         horaInicio: "14:00",
         horaFim: "15:00",
         local: "Piscina 2",
+        prof: "João Silva",
       },
       {
         nome: "Cycling",
         horaInicio: "16:00",
         horaFim: "17:00",
         local: "Sala 2",
+        prof: "Maria Santos",
       },
       {
         nome: "Pilates",
         horaInicio: "18:00",
         horaFim: "19:00",
         local: "Sala 1",
+        prof: "João Silva",
       },
     ],
   },
@@ -342,6 +382,7 @@ function Aulas() {
                     {week.activities.map((activitie) => (
                       <div className="flex w-full justify-between">
                         <button
+                          onClick={console.log("ola")}
                           className={`m-2 inline-block w-full justify-between rounded border px-7 py-3 text-sm font-medium shadow-black/25 transition  ${
                             !(
                               selectedActivity === "todas" ||
@@ -352,9 +393,12 @@ function Aulas() {
                           }`}
                         >
                           <div className="flex flex-col">
-                            <h1 className="mb-3 text-xl">{activitie.nome}</h1>
-                            <h1 className="text-sm text-gray-500">
+                            <h1 className="text-xl">{activitie.nome}</h1>
+                            <h1 className="mb-3 text-sm text-gray-500">
                               {activitie.local}
+                            </h1>
+                            <h1 className="text-sm text-gray-500">
+                              {activitie.prof}
                             </h1>
                           </div>
                           <div className="flex flex-col">

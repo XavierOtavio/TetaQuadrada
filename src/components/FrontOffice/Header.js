@@ -9,9 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.svg";
 
-export default function Header() {
+export default function Header(props) {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(false);
+  const [isLogged, setIsLogged] = props.isLogged;
+
+  const handleLogout = () => {
+    setIsLogged(false);
+  };
 
   return (
     <div className=" flex h-24 items-center justify-center bg-tq1">
@@ -22,6 +27,15 @@ export default function Header() {
         <img src={logo} alt="logo-01" border="0" />
       </Link>
       <div className="ml-2 mr-3 flex w-full justify-end align-baseline">
+        <Link to="/login">
+          <button
+            className={`${
+              location.pathname === "/" ? " text-white" : "text-tq2"
+            } hover:border-thc1 hover:bg-thc1 ml-2 block rounded px-10 py-3 font-medium hover:text-white`}
+          >
+            Login: {isLogged ? "true" : "false"}
+          </button>
+        </Link>
         <Link to="/">
           <button
             className={`${
@@ -136,9 +150,10 @@ export default function Header() {
                 </li>
               </ul>
               <div className="py-2">
-                <Link
-                  to="/login"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
+                <button
+                  type="submit"
+                  onClick={handleLogout}
+                  className="inline-flex w-full items-center justify-start gap-2 px-4 py-1 hover:bg-gray-100"
                 >
                   <FontAwesomeIcon
                     icon={faArrowRightFromBracket}
@@ -146,7 +161,7 @@ export default function Header() {
                     className="mx-2"
                   />
                   Sair
-                </Link>
+                </button>
               </div>
             </div>
           )}
