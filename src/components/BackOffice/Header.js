@@ -6,6 +6,7 @@ import {
   faChartLine,
   faGraduationCap,
   faQuestion,
+  faUserCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/thetaQuadradaRed.svg";
 export default function Header() {
@@ -32,29 +33,29 @@ export default function Header() {
   };
   return (
     <div
-      className={`h-full absolute left-0 transition-all delay-150 duration-500 flex flex-col justify-between items-center ${
+      className={`absolute left-0 flex h-full flex-col items-center justify-between transition-all delay-150 duration-500 ${
         open ? "z-10 w-full" : "w-1/3"
-      } bg-tq1 rounded-r-lg text-white`}
+      } rounded-r-lg bg-tq1 text-white`}
       ref={menuRef}
     >
-      <div className="flex items-center justify-center h-24 py-2">
+      <div className="flex h-24 items-center justify-center py-2">
         <img
           src={logo}
           alt="logo-01"
           border="0"
-          className="w-1/2 mx-auto my-auto"
+          className="mx-auto my-auto w-1/2"
         />
       </div>
-      <div className="w-full flex items-center justify-evenly flex-col h-full px-2">
+      <div className="flex h-full w-full flex-col items-center justify-evenly px-2">
         <Link
           to="/dashboard"
-          className={`h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer ${
+          className={`flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500 ${
             location.pathname === "/dashboard" ? "bg-yellow-500" : ""
           }`}
         >
           <FontAwesomeIcon icon={faChartLine} className="h-4" />
           <span
-            className={`transition-opacity delay-250 duration-500 ${
+            className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100 " : "opacity-0"
             }`}
           >
@@ -63,13 +64,13 @@ export default function Header() {
         </Link>
         <Link
           to="/dashboard/classes"
-          className={`h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer ${
+          className={`flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500 ${
             location.pathname === "/dashboard/classes" ? "bg-yellow-500" : ""
           }`}
         >
           <FontAwesomeIcon icon={faGraduationCap} className="h-4" />
           <span
-            className={`transition-opacity delay-250 duration-500 ${
+            className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -77,12 +78,27 @@ export default function Header() {
           </span>
         </Link>
         <Link
+          to="/dashboard/booking"
+          className={`flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500 ${
+            location.pathname === "/dashboard/booking" ? "bg-yellow-500" : ""
+          }`}
+        >
+          <FontAwesomeIcon icon={faUserCheck} className="h-4" />
+          <span
+            className={`delay-250 transition-opacity duration-500 ${
+              open ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Marcações
+          </span>
+        </Link>
+        <Link
           to="#"
-          className="h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer"
+          className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
           <FontAwesomeIcon icon={faQuestion} className="h-4" />
           <span
-            className={`transition-opacity delay-250 duration-500 ${
+            className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -91,11 +107,11 @@ export default function Header() {
         </Link>
         <Link
           to="#"
-          className="h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer"
+          className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
           <FontAwesomeIcon icon={faQuestion} className="h-4" />
           <span
-            className={`transition-opacity delay-250 duration-500 ${
+            className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -104,24 +120,11 @@ export default function Header() {
         </Link>
         <Link
           to="#"
-          className="h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer"
+          className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
           <FontAwesomeIcon icon={faQuestion} className="h-4" />
           <span
-            className={`transition-opacity delay-250 duration-500 ${
-              open ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            O que quiseres
-          </span>
-        </Link>
-        <Link
-          to="#"
-          className="h-12 flex items-center justify-start gap-4 w-full rounded-lg hover:bg-yellow-500 p-4 cursor-pointer"
-        >
-          <FontAwesomeIcon icon={faQuestion} className="h-4" />
-          <span
-            className={`transition-opacity delay-250 duration-500 ${
+            className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -130,7 +133,7 @@ export default function Header() {
         </Link>
       </div>
       <div
-        className="flex items-center gap-4 justify-start w-full rounded-br-lg bg-tq3 hover:bg-yellow-500 p-4 h-12 cursor-pointer"
+        className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-br-lg bg-tq3 p-4 hover:bg-yellow-500"
         onClick={handleOpen}
       >
         <FontAwesomeIcon

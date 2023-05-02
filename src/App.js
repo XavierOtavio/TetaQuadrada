@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LayoutFront from "./components/FrontOffice/Layout";
 import Home from "./components/FrontOffice/Home";
+import Aulas from "./components/FrontOffice/Aulas";
+import Login from "./components/FrontOffice/Login";
 import LayoutBack from "./components/BackOffice/Layout";
 import Dashboard from "./components/BackOffice/Dashboard";
 import ManageClasses from "./components/BackOffice/ManageClasses";
 import AddEditClass from "./components/BackOffice/AddEditClass";
-import Aulas from "./components/FrontOffice/Aulas";
-import Login from "./components/FrontOffice/Login";
-import { useEffect } from "react";
+import Booking from "./components/BackOffice/Booking";
+import BookingAddEdit from "./components/BackOffice/BookingAddEdit";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -38,6 +39,8 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="classes" element={<ManageClasses />} />
           <Route path="classes/:id" element={<AddEditClass />} />
+          <Route path="booking" element={<Booking />} />
+          <Route path="booking/:id" element={<BookingAddEdit />} />
         </Route>
       </Routes>
     </div>
