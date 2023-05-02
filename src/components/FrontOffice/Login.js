@@ -87,16 +87,6 @@ function Login(props) {
                   >
                     Login
                   </button>
-
-                  {/* <p class="mt-4 text-sm text-gray-500 sm:mt-0">
-                    Ainda não tem conta?
-                    <Link to="/register">
-                      <Link to="/register" class="text-gray-700 underline">
-                        Criar Conta
-                      </Link>
-                    </Link>
-                    .
-                  </p> */}
                 </div>
               </div>
             </div>

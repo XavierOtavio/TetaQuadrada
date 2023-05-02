@@ -1,6 +1,7 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
 import ClassModal from "./ClassModal";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons";
 
 const week = [
   {
@@ -13,6 +14,8 @@ const week = [
         local: "Pavilhão",
         prof: "João Silva",
         lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Yoga",
@@ -21,6 +24,8 @@ const week = [
         local: "Sala 1",
         prof: "Maria Santos",
         lotacao: "7/15",
+        avaliable: true,
+        equipamento: ["Tapete", "Bola"],
       },
       {
         nome: "Natação",
@@ -29,6 +34,8 @@ const week = [
         local: "Piscina 2",
         prof: "João Silva",
         lotacao: "5/10",
+        avaliable: true,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
       {
         nome: "Musculação",
@@ -37,6 +44,8 @@ const week = [
         local: "Pavilhão",
         prof: "Pedro Fernandes",
         lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Natação",
@@ -45,6 +54,8 @@ const week = [
         local: "Piscina 1",
         prof: "Manuel Santos",
         lotacao: "10/10",
+        avaliable: false,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
     ],
   },
@@ -58,6 +69,8 @@ const week = [
         local: "Pavilhão",
         prof: "João Silva",
         lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Musculação",
@@ -66,6 +79,8 @@ const week = [
         local: "Pavilhão",
         prof: "Maria Santos",
         lotacao: "10/30",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Combate",
@@ -74,6 +89,8 @@ const week = [
         local: "Sala 3",
         prof: "João Silva",
         lotacao: "6/14",
+        avaliable: true,
+        equipamento: ["Saco", "Luvas"],
       },
       {
         nome: "Musculação",
@@ -82,6 +99,8 @@ const week = [
         local: "Pavilhão",
         prof: "Pedro Fernandes",
         lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Cardio",
@@ -90,6 +109,9 @@ const week = [
         local: "Pavilhão",
         prof: "Manuel Santos",
         lotacao: "10/25",
+        avaliable: true,
+
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Natação",
@@ -98,6 +120,8 @@ const week = [
         local: "Piscina 1",
         prof: "João Silva",
         lotacao: "3/10",
+        avaliable: true,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
       {
         nome: "Cycling",
@@ -106,6 +130,8 @@ const week = [
         local: "Sala 2",
         prof: "Maria Santos",
         lotacao: "25/25",
+        avaliable: false,
+        equipamento: ["Bicicleta"],
       },
       {
         nome: "Steping",
@@ -113,6 +139,9 @@ const week = [
         horaFim: "19:00",
         local: "Sala 1",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
     ],
   },
@@ -125,6 +154,9 @@ const week = [
         horaFim: "11:00",
         local: "Sala 2",
         prof: "João Silva",
+        lotacao: "15/15",
+        avaliable: false,
+        equipamento: ["Tapete"],
       },
       {
         nome: "Yoga",
@@ -132,6 +164,9 @@ const week = [
         horaFim: "12:00",
         local: "Sala 2",
         prof: "Maria Santos",
+        lotacao: "10/15",
+        avaliable: true,
+        equipamento: ["Tapete", "Bola"],
       },
       {
         nome: "RPM",
@@ -139,6 +174,9 @@ const week = [
         horaFim: "12:00",
         local: "Sala 1",
         prof: "João Silva",
+        lotacao: "10/10",
+        avaliable: false,
+        equipamento: ["Bicicleta"],
       },
       {
         nome: "Musculação",
@@ -146,6 +184,9 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Natação",
@@ -153,6 +194,9 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 1",
         prof: "Manuel Santos",
+        lotacao: "10/10",
+        avaliable: false,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
     ],
   },
@@ -165,6 +209,9 @@ const week = [
         horaFim: "11:00",
         local: "Outdoor",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Musculação",
@@ -172,6 +219,9 @@ const week = [
         horaFim: "12:00",
         local: "Pavilhão",
         prof: "Maria Santos",
+        lotacao: "10/30",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Combate",
@@ -179,6 +229,9 @@ const week = [
         horaFim: "13:00",
         local: "Sala 3",
         prof: "João Silva",
+        lotacao: "6/14",
+        avaliable: true,
+        equipamento: ["Saco", "Luvas"],
       },
       {
         nome: "Musculação",
@@ -186,6 +239,9 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "25/25",
+        avaliable: false,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Cardio",
@@ -193,6 +249,9 @@ const week = [
         horaFim: "15:00",
         local: "Pavilhão",
         prof: "Manuel Santos",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Natação",
@@ -200,6 +259,9 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 2",
         prof: "João Silva",
+        lotacao: "3/10",
+        avaliable: true,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
       {
         nome: "Cycling",
@@ -207,6 +269,9 @@ const week = [
         horaFim: "17:00",
         local: "Sala 2",
         prof: "Maria Santos",
+        lotacao: "25/25",
+        avaliable: false,
+        equipamento: ["Bicicleta"],
       },
       {
         nome: "Pilates",
@@ -214,6 +279,9 @@ const week = [
         horaFim: "19:00",
         local: "Sala 1",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Tapete", "Bola"],
       },
     ],
   },
@@ -226,6 +294,9 @@ const week = [
         horaFim: "11:00",
         local: "Sala 2",
         prof: "João Silva",
+        lotacao: "15/15",
+        avaliable: false,
+        equipamento: ["Tapete"],
       },
       {
         nome: "Steping",
@@ -233,6 +304,9 @@ const week = [
         horaFim: "12:00",
         local: "Outdoor",
         prof: "Maria Santos",
+        lotacao: "10/15",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Cardio",
@@ -240,6 +314,9 @@ const week = [
         horaFim: "12:00",
         local: "Sala 1",
         prof: "João Silva",
+        lotacao: "10/10",
+        avaliable: false,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Musculação",
@@ -247,6 +324,9 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Natação",
@@ -254,6 +334,9 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 1",
         prof: "Manuel Santos",
+        lotacao: "10/10",
+        avaliable: false,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
       {
         nome: "Musculação",
@@ -261,6 +344,9 @@ const week = [
         horaFim: "19:00",
         local: "Pavilhão",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
     ],
   },
@@ -273,6 +359,9 @@ const week = [
         horaFim: "11:00",
         local: "Pavilhão",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Musculação",
@@ -280,6 +369,9 @@ const week = [
         horaFim: "12:00",
         local: "Pavilhão",
         prof: "Maria Santos",
+        lotacao: "10/30",
+        avaliable: true,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Combate",
@@ -287,6 +379,9 @@ const week = [
         horaFim: "13:00",
         local: "Sala 3",
         prof: "João Silva",
+        lotacao: "6/14",
+        avaliable: true,
+        equipamento: ["Saco", "Luvas"],
       },
       {
         nome: "Musculação",
@@ -294,6 +389,9 @@ const week = [
         horaFim: "14:00",
         local: "Pavilhão",
         prof: "Pedro Fernandes",
+        lotacao: "25/25",
+        avaliable: false,
+        equipamento: ["Banco", "Barras", "Halteres", "Bola"],
       },
       {
         nome: "Cardio",
@@ -301,6 +399,9 @@ const week = [
         horaFim: "15:00",
         local: "Pavilhão",
         prof: "Manuel Santos",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Banco", "Passadeira"],
       },
       {
         nome: "Natação",
@@ -308,6 +409,9 @@ const week = [
         horaFim: "15:00",
         local: "Piscina 2",
         prof: "João Silva",
+        lotacao: "3/10",
+        avaliable: true,
+        equipamento: ["Prancha", "Palas", "Barbatanas"],
       },
       {
         nome: "Cycling",
@@ -315,6 +419,9 @@ const week = [
         horaFim: "17:00",
         local: "Sala 2",
         prof: "Maria Santos",
+        lotacao: "25/25",
+        avaliable: false,
+        equipamento: ["Bicicleta"],
       },
       {
         nome: "Pilates",
@@ -322,6 +429,9 @@ const week = [
         horaFim: "19:00",
         local: "Sala 1",
         prof: "João Silva",
+        lotacao: "10/25",
+        avaliable: true,
+        equipamento: ["Tapete", "Bola"],
       },
     ],
   },
@@ -419,13 +529,17 @@ function Aulas(props) {
                       <div className="flex w-full justify-between">
                         <button
                           onClick={() => handleClassClick(activitie)}
-                          className={`m-2 inline-block w-full justify-between rounded border px-7 py-3 text-sm font-medium shadow-black/25 transition  ${
+                          className={`m-2 inline-block w-full justify-between ${
+                            activitie.avaliable
+                              ? ""
+                              : " border-red-600 bg-red-600/25 hover:bg-red-600/25"
+                          } rounded border px-7 py-3 text-sm font-medium shadow-black/25 transition  ${
                             !(
                               selectedActivity === "todas" ||
                               activitie.nome === selectedActivity
                             )
                               ? "cursor-not-allowed opacity-20"
-                              : "hover:rotate-2 hover:scale-110 hover:bg-tq2 hover:shadow-md focus:outline-none focus:ring "
+                              : "hover:rotate-2 hover:scale-110 hover:bg-gray-200 hover:shadow-md focus:outline-none focus:ring"
                           }`}
                         >
                           <div className="flex flex-col">
