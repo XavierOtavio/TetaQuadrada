@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 
 export default function BookingAddEdit() {
@@ -20,22 +18,32 @@ export default function BookingAddEdit() {
     {
       id: 1,
       name: "João",
+      contacto: "912853988",
+      email: "joao@mail.org",
     },
     {
       id: 2,
       name: "Maria",
+      contacto: "912456788",
+      email: "maria@mail.org",
     },
     {
       id: 3,
       name: "Daniel",
+      contacto: "912873478",
+      email: "daniel@mail.org",
     },
     {
       id: 4,
       name: "Carlos",
+      contacto: "914455678",
+      email: "carlos@mail.org",
     },
     {
       id: 5,
       name: "Marcos",
+      contacto: "912736478",
+      email: "marcos@mail.org",
     },
   ];
 
@@ -132,6 +140,36 @@ export default function BookingAddEdit() {
               />
             </div>
           </div>
+          <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
+            <div className="flex flex-col justify-start">
+              <span className="ml-4 text-left text-xs">
+                Contacto do cliente
+              </span>
+              <label className="sr-only" for="contacto">
+                Contacto
+              </label>
+              <input
+                className="w-full rounded-lg border-gray-300 p-3 text-sm"
+                value={users[id - 1]?.contacto || null}
+                type="text"
+                id="contacto"
+                disabled
+              />
+            </div>
+            <div className="flex flex-col justify-start">
+              <span className="ml-4 text-left text-xs">Email do cliente</span>
+              <label className="sr-only" for="email">
+                Email
+              </label>
+              <input
+                className="w-full rounded-lg border-gray-300 p-3 text-sm"
+                value={users[id - 1]?.email || null}
+                type="text"
+                id="email"
+                disabled
+              />
+            </div>
+          </div>
           <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
             <div className="flex flex-col justify-start">
               <span className="ml-4 text-left text-xs">Tipo de aula</span>
@@ -148,7 +186,7 @@ export default function BookingAddEdit() {
                 }
               >
                 {classes.map((classType) => (
-                  <option value={classType.classType}>
+                  <option key={classType.classType} value={classType.classType}>
                     {classType.classType}
                   </option>
                 ))}

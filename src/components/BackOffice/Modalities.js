@@ -5,62 +5,38 @@ import {
   faPlus,
   faEye,
   faTrash,
-  faEnvelope,
-  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export default function Booking() {
-  const [bookings, setBookings] = useState([
+export default function Modalities() {
+  const [modalities, setModalities] = useState([
     {
       id: 1,
-      name: "João",
       classType: "Yoga",
-      location: "Sala 1",
-      day: "2021-10-10",
-      schedule: "10:00",
-      contacto: "912853988",
-      email: "joao@mail.org",
+      classDescription:
+        "O yoga é um conjunto de disciplinas físicas, mentais e espirituais originárias da Índia. A palavra está associada com as práticas meditativas tanto do budismo quanto do hinduísmo.",
+      locationType: "Sala",
     },
     {
       id: 2,
-      name: "Maria",
       classType: "Musculação",
-      location: "Ginásio",
-      day: "2021-10-10",
-      schedule: "10:00",
-      contacto: "912456788",
-      email: "maria@mail.org",
+      classDescription:
+        "O treinamento de força, conhecido popularmente como musculação, é uma forma de exercício contra resistência, praticado normalmente em academias, para o treinamento e desenvolvimento dos músculos esqueléticos.",
+      locationType: "Ginásio",
     },
     {
       id: 3,
-      name: "Daniel",
       classType: "Zumba",
-      location: "Sala 2",
-      day: "2021-10-10",
-      schedule: "9:00",
-      contacto: "912873478",
-      email: "daniel@mail.org",
-    },
-    {
-      id: 4,
-      name: "Carlos",
-      classType: "Yoga",
-      location: "Sala 1",
-      day: "2021-10-10",
-      schedule: "10:00",
-      contacto: "914455678",
-      email: "carlos@mail.org",
+      classDescription:
+        "O zumba mistura movimentos de danças latinas como o samba, salsa, merengue, mambo e reggaeton, ou mesmo outros estilos como hip hop e dança do ventre com exercícios próprios do treino cardiovascular e, por este motivo, é muito utilizado em academias, promovendo o condicionamento físico de um modo geral.",
+      locationType: "Sala",
     },
     {
       id: 5,
-      name: "Marcos",
       classType: "Natação Livre",
-      location: "Piscina",
-      day: "2021-10-10",
-      schedule: "10:00",
-      contacto: "912736478",
-      email: "marcos@mail.org",
+      classDescription:
+        "A natação é a capacidade do homem e de outros seres vivos de se deslocarem através de movimentos efetuados no meio líquido, geralmente sem ajuda artificial. A natação é uma das atividades físicas mais completas, pois trabalha todos os músculos do corpo.",
+      locationType: "Piscina",
     },
   ]);
 
@@ -75,14 +51,14 @@ export default function Booking() {
             />
             <input
               className="focus:ring-thc2 flex h-10 w-64 items-center rounded border border-tq1 bg-white pl-10 text-sm font-normal text-tq1 focus:outline-none focus:ring"
-              placeholder="Por id ou nome do cliente"
+              placeholder="Por id ou nome da modalidade"
             />
           </div>
           <div className="flex w-full  items-center justify-center text-sm font-bold">
-            Ordenado por data mais recente
+            Ordenado por nome
           </div>
           <div className="flex h-full w-full items-center justify-end">
-            <Link to={`/dashboard/booking/${null}`}>
+            <Link to={`/dashboard/modalities/${null}`}>
               <button
                 type="button"
                 className="relative flex h-10 w-32 items-center rounded border border-tq1 bg-white px-3 text-sm font-normal text-tq1 shadow"
@@ -105,16 +81,10 @@ export default function Booking() {
                 ID
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Nome
+                Modalidade
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Aula
-              </th>
-              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Horário
-              </th>
-              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Localização
+                Espaço
               </th>
               <th className="whitespace-nowrap px-8 py-2 text-left font-medium text-tq1">
                 Ações
@@ -122,46 +92,31 @@ export default function Booking() {
             </tr>
           </thead>
           <tbody className="text-left">
-            {bookings.map((booking) => (
-              <tr key={booking.id} className="border-b">
-                <td className="whitespace-nowrap px-4 py-2">{booking.id}</td>
-
-                <td className="whitespace-nowrap px-4 py-2">{booking.name}</td>
+            {modalities.map((modality) => (
+              <tr key={modality.id} className="border-b">
+                <td className="whitespace-nowrap px-4 py-2">{modality.id}</td>
                 <td className="whitespace-nowrap px-4 py-2">
-                  {booking.classType}
+                  {modality.classType}
                 </td>
                 <td className="whitespace-break-spaces px-4 py-2">
-                  {booking.day + " " + booking.schedule}
-                </td>
-                <td className="whitespace-break-spaces px-4 py-2">
-                  {booking.location}
+                  {modality.locationType}
                 </td>
                 <td className="whitespace-nowrap px-8 py-2">
                   <Link
-                    to={`/dashboard/booking/${booking.id}`}
-                    state={{ data: booking }}
+                    to={`/dashboard/modalities/${modality.id}`}
+                    state={{ data: modality }}
                   >
                     <FontAwesomeIcon
                       icon={faEye}
                       className="h-6 w-6 cursor-pointer text-blue-700"
                     />
                   </Link>
-                  <Link to={`tel:${booking.contacto}`}>
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      className="ml-2 h-6 w-6 cursor-pointer text-green-700"
-                    />
-                  </Link>
-                  <Link to={`mailto:${booking.email}`}>
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="ml-2 h-6 w-6 cursor-pointer text-yellow-700"
-                    />
-                  </Link>
                   <FontAwesomeIcon
                     icon={faTrash}
                     onClick={() => {
-                      setBookings(bookings.filter((b) => b.id !== booking.id));
+                      setModalities(
+                        modalities.filter((b) => b.id !== modality.id)
+                      );
                     }}
                     className="ml-2 h-6 w-6 cursor-pointer text-red-700"
                   />

@@ -7,6 +7,8 @@ import {
   faGraduationCap,
   faQuestion,
   faUserCheck,
+  faDumbbell,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/thetaQuadradaRed.svg";
 export default function Header() {
@@ -93,16 +95,16 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          to="#"
+          to="/dashboard/modalities"
           className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
-          <FontAwesomeIcon icon={faQuestion} className="h-4" />
+          <FontAwesomeIcon icon={faDumbbell} className="h-4" />
           <span
             className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
-            O que quiseres
+            Modalidades
           </span>
         </Link>
         <Link
@@ -119,16 +121,16 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          to="#"
+          to="/"
           className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
-          <FontAwesomeIcon icon={faQuestion} className="h-4" />
+          <FontAwesomeIcon icon={faArrowRightFromBracket} className="h-4" />
           <span
             className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
-            O que quiseres
+            Sair
           </span>
         </Link>
       </div>

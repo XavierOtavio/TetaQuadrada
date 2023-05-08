@@ -10,6 +10,8 @@ import ManageClasses from "./components/BackOffice/ManageClasses";
 import AddEditClass from "./components/BackOffice/AddEditClass";
 import Booking from "./components/BackOffice/Booking";
 import BookingAddEdit from "./components/BackOffice/BookingAddEdit";
+import Modalities from "./components/BackOffice/Modalities";
+import AddEditModality from "./components/BackOffice/AddEditModality";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -41,6 +43,8 @@ function App() {
           <Route path="classes/:id" element={<AddEditClass />} />
           <Route path="booking" element={<Booking />} />
           <Route path="booking/:id" element={<BookingAddEdit />} />
+          <Route path="modalities" element={<Modalities />} />
+          <Route path="modalities/:id" element={<AddEditModality />} />
         </Route>
       </Routes>
     </div>
