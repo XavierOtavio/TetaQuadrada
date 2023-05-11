@@ -14,6 +14,7 @@ import Modalities from "./components/BackOffice/Modalities";
 import AddEditModality from "./components/BackOffice/AddEditModality";
 import Coaches from "./components/BackOffice/Coaches";
 import CoachesFront from "./components/FrontOffice/CoachesFront";
+import MyAccount from "./components/FrontOffice/MyAccount";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -56,6 +57,7 @@ function App() {
             path="coachesfront"
             element={<CoachesFront isLogged={[isLogged, setIsLogged]} />}
           />
+          <Route path="myaccount" element={<MyAccount />} />
         </Route>
         <Route
           path="/login"

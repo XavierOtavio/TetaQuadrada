@@ -95,7 +95,7 @@ export default function Header(props) {
                 <ul className="text-sm text-gray-700">
                   <li>
                     <Link
-                      to="/bookings"
+                      to="/myaccount"
                       className="inline-flex w-full items-center justify-start gap-2 px-4 py-2 hover:bg-gray-100"
                     >
                       <FontAwesomeIcon
@@ -103,7 +103,7 @@ export default function Header(props) {
                         color="black"
                         className="w-6"
                       />
-                      As minhas reservas
+                      A Minha Conta
                     </Link>
                   </li>
                   <li>

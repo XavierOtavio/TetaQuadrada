@@ -17,57 +17,65 @@ function ClassModal(props) {
             {/* <!-- Modal header --> */}
             <div class="flex  rounded-t border-b p-4 ">
               <h3 class="text-xl font-semibold text-gray-900">
-                Marcar Atividade
+                Marcar Aula de Grupo
               </h3>{" "}
               <button
                 type="button"
-                class="ml-auto rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+                class="ml-auto rounded-lg bg-transparent p-1.5 text-sm text-gray-400  hover:text-gray-900"
                 onClick={() => setOpenClassModal(false)}
               >
                 <FontAwesomeIcon icon={faX} className="h-6 w-6" />
               </button>
             </div>
             {/* <!-- Modal body --> */}
-            <div class="space-y-6 p-6">
-              <form class="grid grid-cols-6 gap-4">
+            <div class="-mb-14 space-y-6 p-6">
+              <form class="grid grid-cols-6 gap-6">
                 <div class="col-span-1 text-lg font-semibold text-gray-900">
                   Atividade
-                  <h6 class="text-sm font-semibold text-gray-900">
+                  <h6 class="text-md font-normal text-gray-500">
                     {modalData.nome}
                   </h6>
                 </div>
 
                 <div class="col-span-1 text-lg font-semibold text-gray-900">
                   Local
-                  <h6 class="text-sm font-semibold text-gray-900">
+                  <h6 class="text-md font-normal text-gray-500">
                     {modalData.local}
                   </h6>
                 </div>
 
                 <div class="col-span-1 text-lg font-semibold text-gray-900">
                   Horário
-                  <h6 class="text-sm font-semibold text-gray-900">
+                  <h6 class="text-md font-normal text-gray-500">
                     {modalData.horaInicio} - {modalData.horaFim}
                   </h6>
                 </div>
 
                 <div class="col-span-1 text-lg font-semibold text-gray-900">
                   Treinador
-                  <h6 class="text-sm font-semibold text-gray-900">
+                  <h6 class="text-md font-normal text-gray-500">
                     {modalData.prof}
                   </h6>
                 </div>
                 <div class="col-span-1 text-lg font-semibold text-gray-900">
                   Lotação
                   <h6
-                    class={`text-sm font-semibold  ${
+                    class={`text-md font-normal  ${
                       modalData.avaliable ? "text-green-600" : "text-red-600"
                     }`}
                   >
                     {modalData.lotacao}
                   </h6>
                 </div>
-                <div class="col-span-6 text-lg font-semibold text-gray-900">
+                <div class="col-span-1 text-lg font-semibold text-gray-900">
+                  Preço
+                  {choosedPlan === "plano3" ? (
+                    <h6 className="text-xs italic">Incluído no seu plano</h6>
+                  ) : (
+                    <h6 className="text-md font-normal">{modalData.price}€</h6>
+                  )}
+                </div>
+                <div class="col-span-6 mt-6 text-lg font-semibold text-gray-900">
                   Equipamento:
                   <ul className="text-sm">
                     {modalData.equipamento.map((equipamento) => (
@@ -83,69 +91,18 @@ function ClassModal(props) {
               }`}
             >
               <div className={`${choosedPlan === "plano3" && "sr-only"}`}>
-                <h3 class="col-span-6 mt-6 text-lg font-semibold text-gray-900">
-                  Pagamento
+                <h3 class="col-span-6 -mb-4 mt-6 text-right text-xs text-gray-400">
+                  *Efetuar o pagamento na página "A Minha Conta"
                 </h3>
-                <fieldset class="col-span-6">
-                  <legend class="block text-xs font-medium text-gray-700">
-                    Detalhes do Cartão
-                  </legend>
-
-                  <div class="mt-1 -space-y-px rounded-md bg-white shadow-sm">
-                    <div>
-                      <label for="CardNumber" class="sr-only">
-                        {" "}
-                        Número do Cartão{" "}
-                      </label>
-
-                      <input
-                        type="text"
-                        id="CardNumber"
-                        placeholder="Número do Cartão"
-                        class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
-                      />
-                    </div>
-
-                    <div class="flex -space-x-px">
-                      <div class="flex-1">
-                        <label for="CardExpiry" class="sr-only">
-                          {" "}
-                          Card Expiry{" "}
-                        </label>
-
-                        <input
-                          type="text"
-                          id="CardExpiry"
-                          placeholder="Data de Validade"
-                          class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
-                        />
-                      </div>
-
-                      <div class="flex-1">
-                        <label for="CardCVC" class="sr-only">
-                          {" "}
-                          Card CVC{" "}
-                        </label>
-
-                        <input
-                          type="text"
-                          id="CardCVC"
-                          placeholder="CVC"
-                          class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
               </div>
 
               {/* <!-- Modal footer --> */}
-              <div class="space-x-2 rounded-b border-t border-gray-200 p-6">
+              <div class="space-x-2 rounded-b border-t border-gray-200 pt-6">
                 <Link to="/classes">
                   <button
                     data-modal-hide="defaultModal"
                     type="button"
-                    class=" ml-2 rounded border border-tq1 bg-tq1 px-10 py-3 font-medium text-white hover:border-tq2 hover:bg-tq2"
+                    class="rounded border border-tq1 bg-tq1 px-10 py-3 font-medium text-white hover:border-tq2 hover:bg-tq2"
                     onClick={() => setOpenClassModal(false)}
                   >
                     Marcar

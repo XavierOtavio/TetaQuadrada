@@ -9,27 +9,35 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import PlanErrorModal from "./PlanErrorModal";
+import { useState } from "react";
 
 function Home(props) {
   const [isLogged, setIsLogged] = props.isLogged;
   const [choosedPlan, setChoosedPlan] = props.choosedPlan;
+  const [openPlanErrorModal, setOpenPlanErrorModal] = useState(false);
   const navigate = useNavigate();
 
   const handlePlanClick = (plan) => {
     if (isLogged) {
-      switch (plan) {
-        case 1:
-          setChoosedPlan("plano1");
-          break;
-        case 2:
-          setChoosedPlan("plano2");
-          break;
-        case 3:
-          setChoosedPlan("plano3");
-          break;
-        default:
-          break;
+      if (choosedPlan !== "") {
+        setOpenPlanErrorModal(true);
+      } else {
+        switch (plan) {
+          case 1:
+            setChoosedPlan("plano1");
+            break;
+          case 2:
+            setChoosedPlan("plano2");
+            break;
+          case 3:
+            setChoosedPlan("plano3");
+            break;
+          default:
+            break;
+        }
       }
+      navigate("/myaccount");
     } else {
       navigate("/login");
     }
@@ -56,24 +64,24 @@ function Home(props) {
 
             <div class="mt-8 flex flex-wrap gap-4 text-center">
               <a
-                href="#start"
+                href="#plans"
                 class="block w-full scroll-smooth rounded bg-tq4 px-12 py-3 text-sm font-medium text-white shadow transition hover:bg-tq2 focus:outline-none focus:ring active:bg-tq2 sm:w-auto"
               >
-                Vamos começar
+                Ver Planos
               </a>
 
               <Link
                 to="/classes"
                 class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-tq1 shadow hover:text-tq2 focus:outline-none focus:ring active:text-tq2 sm:w-auto"
               >
-                Marcar Aulas
+                Aulas de Grupo
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <div id="start">
+      <div>
         <div class="bg-white">
           <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-5xl text-center">
@@ -108,7 +116,10 @@ function Home(props) {
           className="object-cover object-center"
         />
       </div>
-      <h1 class="mb-3 mt-2 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
+      <h1
+        class="mb-3 mt-2 text-center text-3xl font-extrabold text-tq1 sm:text-4xl"
+        id="plans"
+      >
         Descobre os nossos planos
       </h1>
       <section className="bg-tq1">
@@ -391,6 +402,9 @@ function Home(props) {
             class="aspect-video w-full object-cover"
           />
         </div>
+      </div>
+      <div className="fixed">
+        <PlanErrorModal />
       </div>
     </div>
   );

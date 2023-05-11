@@ -16,6 +16,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 3,
       },
       {
         nome: "Yoga",
@@ -26,6 +27,7 @@ const week = [
         lotacao: "7/15",
         avaliable: true,
         equipamento: ["Tapete", "Bola"],
+        price: 6,
       },
       {
         nome: "Natação",
@@ -36,6 +38,7 @@ const week = [
         lotacao: "5/10",
         avaliable: true,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 4,
       },
       {
         nome: "Musculação",
@@ -46,6 +49,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 5,
       },
       {
         nome: "Natação",
@@ -56,6 +60,7 @@ const week = [
         lotacao: "10/10",
         avaliable: false,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 6,
       },
     ],
   },
@@ -71,6 +76,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 3,
       },
       {
         nome: "Musculação",
@@ -81,6 +87,7 @@ const week = [
         lotacao: "10/30",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 4,
       },
       {
         nome: "Combate",
@@ -91,6 +98,7 @@ const week = [
         lotacao: "6/14",
         avaliable: true,
         equipamento: ["Saco", "Luvas"],
+        price: 4,
       },
       {
         nome: "Musculação",
@@ -101,6 +109,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 7,
       },
       {
         nome: "Cardio",
@@ -110,8 +119,8 @@ const week = [
         prof: "Manuel Santos",
         lotacao: "10/25",
         avaliable: true,
-
         equipamento: ["Banco", "Passadeira"],
+        price: 7,
       },
       {
         nome: "Natação",
@@ -122,6 +131,7 @@ const week = [
         lotacao: "3/10",
         avaliable: true,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 4,
       },
       {
         nome: "Cycling",
@@ -132,6 +142,7 @@ const week = [
         lotacao: "25/25",
         avaliable: false,
         equipamento: ["Bicicleta"],
+        price: 6,
       },
       {
         nome: "Steping",
@@ -142,6 +153,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 9,
       },
     ],
   },
@@ -157,6 +169,7 @@ const week = [
         lotacao: "15/15",
         avaliable: false,
         equipamento: ["Tapete"],
+        price: 3,
       },
       {
         nome: "Yoga",
@@ -167,6 +180,7 @@ const week = [
         lotacao: "10/15",
         avaliable: true,
         equipamento: ["Tapete", "Bola"],
+        price: 4,
       },
       {
         nome: "RPM",
@@ -177,6 +191,7 @@ const week = [
         lotacao: "10/10",
         avaliable: false,
         equipamento: ["Bicicleta"],
+        price: 4,
       },
       {
         nome: "Musculação",
@@ -187,6 +202,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 7,
       },
       {
         nome: "Natação",
@@ -197,6 +213,7 @@ const week = [
         lotacao: "10/10",
         avaliable: false,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 8,
       },
     ],
   },
@@ -212,6 +229,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 3,
       },
       {
         nome: "Musculação",
@@ -222,6 +240,7 @@ const week = [
         lotacao: "10/30",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 4,
       },
       {
         nome: "Combate",
@@ -232,6 +251,7 @@ const week = [
         lotacao: "6/14",
         avaliable: true,
         equipamento: ["Saco", "Luvas"],
+        price: 6,
       },
       {
         nome: "Musculação",
@@ -242,6 +262,7 @@ const week = [
         lotacao: "25/25",
         avaliable: false,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 6,
       },
       {
         nome: "Cardio",
@@ -252,6 +273,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 5,
       },
       {
         nome: "Natação",
@@ -262,6 +284,7 @@ const week = [
         lotacao: "3/10",
         avaliable: true,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 5,
       },
       {
         nome: "Cycling",
@@ -272,6 +295,7 @@ const week = [
         lotacao: "25/25",
         avaliable: false,
         equipamento: ["Bicicleta"],
+        price: 8,
       },
       {
         nome: "Pilates",
@@ -282,6 +306,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Tapete", "Bola"],
+        price: 8,
       },
     ],
   },
@@ -297,6 +322,7 @@ const week = [
         lotacao: "15/15",
         avaliable: false,
         equipamento: ["Tapete"],
+        price: 3,
       },
       {
         nome: "Steping",
@@ -307,6 +333,7 @@ const week = [
         lotacao: "10/15",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 4,
       },
       {
         nome: "Cardio",
@@ -317,6 +344,7 @@ const week = [
         lotacao: "10/10",
         avaliable: false,
         equipamento: ["Banco", "Passadeira"],
+        price: 4,
       },
       {
         nome: "Musculação",
@@ -327,6 +355,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 7,
       },
       {
         nome: "Natação",
@@ -337,6 +366,7 @@ const week = [
         lotacao: "10/10",
         avaliable: false,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 7,
       },
       {
         nome: "Musculação",
@@ -347,6 +377,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 10,
       },
     ],
   },
@@ -362,6 +393,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 7,
       },
       {
         nome: "Musculação",
@@ -372,6 +404,7 @@ const week = [
         lotacao: "10/30",
         avaliable: true,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 8,
       },
       {
         nome: "Combate",
@@ -382,6 +415,7 @@ const week = [
         lotacao: "6/14",
         avaliable: true,
         equipamento: ["Saco", "Luvas"],
+        price: 8,
       },
       {
         nome: "Musculação",
@@ -392,6 +426,7 @@ const week = [
         lotacao: "25/25",
         avaliable: false,
         equipamento: ["Banco", "Barras", "Halteres", "Bola"],
+        price: 9,
       },
       {
         nome: "Cardio",
@@ -402,6 +437,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Banco", "Passadeira"],
+        price: 10,
       },
       {
         nome: "Natação",
@@ -412,6 +448,7 @@ const week = [
         lotacao: "3/10",
         avaliable: true,
         equipamento: ["Prancha", "Palas", "Barbatanas"],
+        price: 10,
       },
       {
         nome: "Cycling",
@@ -422,6 +459,7 @@ const week = [
         lotacao: "25/25",
         avaliable: false,
         equipamento: ["Bicicleta"],
+        price: 11,
       },
       {
         nome: "Pilates",
@@ -432,6 +470,7 @@ const week = [
         lotacao: "10/25",
         avaliable: true,
         equipamento: ["Tapete", "Bola"],
+        price: 10,
       },
     ],
   },
@@ -489,7 +528,7 @@ function Aulas(props) {
       <div className="mb-24 px-32">
         <h1 class="my-10 mb-16 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
           {" "}
-          Marcar Aulas
+          Aulas de Grupo
         </h1>
         <div>
           <form className="text-center">
