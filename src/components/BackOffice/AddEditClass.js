@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useParams, useLocation } from "react-router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEuro, faUser, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 export default function AddEditClass() {
   const params = useParams();
@@ -16,6 +18,7 @@ export default function AddEditClass() {
           hours: [],
           pt: [],
           duration: 0,
+          price: [],
         }
   );
 
@@ -58,6 +61,12 @@ export default function AddEditClass() {
     setData({ ...data, hours: hours });
   };
 
+  const handlePrice = (e, i) => {
+    const price = [...data.price];
+    price[i] = e.target.value;
+    setData({ ...data, price: price });
+  };
+
   const handlePT = (e, i) => {
     const pt = [...data.pt];
     pt[i] = e.target.value;
@@ -73,9 +82,7 @@ export default function AddEditClass() {
         <form action="#" className="space-y-4">
           <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
             <div className="flex flex-col justify-start">
-            <span className="text-xs text-left ml-4">
-                Nome da aula
-              </span>
+              <span className="ml-4 text-left text-xs">Nome da aula</span>
               <label className="sr-only" for="name">
                 Name
               </label>
@@ -89,9 +96,7 @@ export default function AddEditClass() {
               />
             </div>
             <div className="flex flex-col justify-start">
-              <span className="text-xs text-left ml-4">
-                Duração em minutos
-              </span>
+              <span className="ml-4 text-left text-xs">Duração em minutos</span>
               <label className="sr-only" for="name">
                 Duração
               </label>
@@ -316,35 +321,68 @@ export default function AddEditClass() {
               </p>
               <div>
                 {data.schedule.map((day, i) => (
-                  <div className="grid grid-cols-1 gap-4 text-left" key={`ID${i}`}>
-                    <div className="inline-flex items-center justify-around">
-                      <label
-                        className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
-                        tabindex="0"
-                      >
-                        <span className="text-sm font-medium">
-                          {dayTranslator(day)}
-                        </span>
-                      </label>
+                  <div
+                    className="mb-2 grid grid-cols-1 gap-4 text-left"
+                    key={`ID${i}`}
+                  >
+                    <div className="inline-flex items-center justify-around gap-2">
+                      <div className="relative inline-flex h-16 w-full items-center justify-center rounded-lg peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
+                        <FontAwesomeIcon
+                          icon={faBookOpen}
+                          className="absolute right-4 h-4 w-4"
+                        />
+                        <label
+                          className="block h-16 w-full rounded-lg border border-gray-200 bg-white p-3 pr-8 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
+                          tabindex="0"
+                        >
+                          <span className="flex h-full flex-col items-start justify-center text-sm font-medium">
+                            {dayTranslator(day)}
+                          </span>
+                        </label>
+                      </div>
                       <input
                         id="startingHour"
                         type="time"
                         tabindex="-1"
                         value={data.hours[i]}
-                        className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
+                        className="block h-16 w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
                         name="startingHour"
                         onChange={(e) => handleHours(e, i)}
                       />
-                      <select value={data.pt[i]}
-                        onChange={(e) => handlePT(e, i)}
-                      className="block w-full rounded-lg border border-gray-200 p-3 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
-                        <option selected disabled value="-1">
-                          Selecione
-                        </option>
-                        <option value="1000">José</option>
-                        <option value="1001">Maria</option>
-                        <option value="1002">Ambrósio</option>
-                      </select>
+                      <div className="relative inline-flex h-16 w-full items-center justify-center rounded-lg peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          className="absolute right-4 h-4 w-4"
+                        />
+                        <select
+                          value={data.pt[i]}
+                          onChange={(e) => handlePT(e, i)}
+                          className="block h-16 w-full rounded-lg border border-gray-200 p-3 pr-8 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
+                        >
+                          <option selected disabled value="-1">
+                            Selecione
+                          </option>
+                          <option value="1000">José</option>
+                          <option value="1001">Maria</option>
+                          <option value="1002">Ambrósio</option>
+                        </select>
+                      </div>
+                      <div className="relative inline-flex h-16 w-full items-center justify-center rounded-lg peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white">
+                        <input
+                          id="price"
+                          type="number"
+                          className="block h-full w-full rounded-lg border border-gray-200 p-3 pr-8 hover:border-tq1 peer-checked:border-tq1 peer-checked:bg-tq1 peer-checked:text-white"
+                          tabindex="-1"
+                          value={data.price[i] || ""}
+                          placeholder="Preço"
+                          name="price"
+                          onChange={(e) => handlePrice(e, i)}
+                        />
+                        <FontAwesomeIcon
+                          icon={faEuro}
+                          className="absolute right-4 h-4 w-4"
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}

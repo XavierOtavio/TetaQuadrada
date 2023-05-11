@@ -43,9 +43,9 @@ export default function Header(props) {
               location.pathname === "/classes"
                 ? "bg-tq4 text-white"
                 : "text-tq2"
-            } hover:border-thc1 hover:bg-thc1 ml-2 block rounded px-10 py-3 font-medium hover:text-white`}
+            } hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium hover:bg-tq4 hover:text-white`}
           >
-            Aulas
+            Aulas de Grupo
           </button>
         </Link>
 

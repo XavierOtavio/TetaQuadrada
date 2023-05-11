@@ -8,8 +8,33 @@ import {
   faWeightHanging,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home(props) {
+  const [isLogged, setIsLogged] = props.isLogged;
+  const [choosedPlan, setChoosedPlan] = props.choosedPlan;
+  const navigate = useNavigate();
+
+  const handlePlanClick = (plan) => {
+    if (isLogged) {
+      switch (plan) {
+        case 1:
+          setChoosedPlan("plano1");
+          break;
+        case 2:
+          setChoosedPlan("plano2");
+          break;
+        case 3:
+          setChoosedPlan("plano3");
+          break;
+        default:
+          break;
+      }
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div>
       <section class="relative bg-[url(https://www.noticiasmagazine.pt/files/2021/11/strong-man-training-in-gym-1200x675.jpg)] bg-cover bg-center bg-no-repeat">
@@ -93,73 +118,116 @@ function Home() {
               <ul class="grid grid-cols-3 gap-8">
                 <li>
                   <div class="group relative block overflow-hidden">
-                    <div class="relative border border-gray-100 bg-white p-6">
-                      <span class="whitespace-nowrap bg-tq4 px-3 py-1.5 text-xs font-medium">
+                    <div class="relative block border border-gray-100 bg-white p-6">
+                      <span class="whitespace-nowrap bg-tq4 px-3 py-1.5 text-xs font-medium text-white">
                         New
                       </span>
-                      <h3 class="mt-4 text-center text-4xl font-medium text-gray-900">
+                      <h3 class="mt-5 text-center text-4xl font-medium text-gray-900">
                         Finess Floris
                       </h3>
                       <h3 class="mt-2 text-center text-xl font-medium text-gray-900">
                         Tempo Parcial
                       </h3>
 
-                      <h1 class="mt-12 text-center text-6xl font-light text-gray-900">
-                        15€/mês
+                      <h1 class="my-12 text-center text-7xl font-light text-gray-900">
+                        15€<span class="text-3xl">/mês</span>
                       </h1>
 
-                      <hr className="mb-2 mt-2 text-gray-500" />
+                      <hr className="my-2 text-gray-500" />
 
-                      <p class="mt-1.5 pl-3 text-sm text-gray-700">
+                      <p class="mt-5 pl-3 text-sm text-gray-700">
                         <p class=" text-gray-700"> SEGUNDA - SEXTA</p>
                         <p class=" text-gray-700"> 09:00 - 11:30</p>
                         <p class=" text-gray-700">14:00 - 17:00</p>
-                        <p class="mt-1.5 text-gray-700">
-                          ACESSO A TODOS OS CLUBES
-                        </p>
-                        <p class=" text-gray-700">
-                          (exepto clubes com piscina)
-                        </p>
+                        <p class="mt-3 text-gray-700">- ACESSO AO GINÁSIO</p>
                       </p>
 
-                      <form class="mt-4">
-                        <button class="block w-full rounded bg-tq4 p-4 text-sm font-medium transition hover:scale-105">
-                          Add to Cart
-                        </button>
-                      </form>
+                      <button
+                        class="mb-4 mt-24 block w-full rounded border bg-tq4 p-4 text-sm font-medium text-white transition hover:border hover:border-tq4 hover:bg-white hover:text-tq4"
+                        onClick={() => handlePlanClick(1)}
+                      >
+                        Selecionar
+                      </button>
                     </div>
                   </div>
                 </li>
                 <li>
-                  {/* <Link to="#" class="group block"> */}
-                  <img
-                    src="https://www.bodybuilding.com/images/2021/march/what-is-the-best-5-day-workout-split-header-960x540.jpg"
-                    alt=""
-                    class="aspect-square w-full rounded object-cover"
-                  />
-
-                  <div class="mt-3">
-                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
-                      Treino de Força
+                  <div class="relative block border border-gray-100 bg-white p-6">
+                    <span class="whitespace-nowrap px-3 py-1.5 text-xs font-medium text-white">
+                      New
+                    </span>
+                    <h3 class="mt-4 text-center text-4xl font-medium text-gray-900">
+                      Morks Gorlassions
                     </h3>
+                    <h3 class="mt-2 text-center text-xl font-medium text-gray-900">
+                      Horário Livre
+                    </h3>
+
+                    <h1 class="my-12 text-center text-7xl font-light text-gray-900">
+                      45€<span class="text-3xl">/mês</span>
+                    </h1>
+
+                    <hr className="my-2 text-gray-500" />
+
+                    <p class="mt-4 pl-3 text-sm text-gray-700">
+                      <p class=" text-gray-700"> SEGUNDA - SÁBADO</p>
+                      <p class=" text-gray-700"> 07:00 - 21:30</p>
+                      <p class="mt-3 text-gray-700">- ACESSO AO GINÁSIO</p>
+
+                      <p class=" mt-3 text-gray-700"> - TOALHAS GRATUITAS</p>
+                      <p class=" text-gray-700"> - CACIFOS</p>
+                      <p class=" text-gray-700">- AVALIAÇÃO NUTRICIONAL</p>
+                    </p>
+
+                    <button
+                      class="mb-3 mt-14 block w-full rounded border bg-tq4 p-4 text-sm font-medium text-white transition hover:border hover:border-tq4 hover:bg-white hover:text-tq4"
+                      onClick={() => handlePlanClick(2)}
+                    >
+                      Selecionar
+                    </button>
                   </div>
-                  {/* </Link> */}
                 </li>
 
                 <li>
-                  {/* <Link to="#" class="group block"> */}
-                  <img
-                    src="https://static.tuasaude.com/media/article/qj/jh/beneficios-do-yoga_22472_l.jpg"
-                    alt=""
-                    class="aspect-square w-full rounded object-cover"
-                  />
-
-                  <div class="mt-3">
-                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
-                      Yoga
+                  <div class="relative block border border-gray-100 bg-white p-6">
+                    <span class="whitespace-nowrap px-3 py-1.5 text-xs font-medium text-white">
+                      New
+                    </span>
+                    <h3 class="mt-4 text-center text-4xl font-medium text-gray-900">
+                      Mifas Masters
                     </h3>
+                    <h3 class="mt-2 text-center text-xl font-medium text-gray-900">
+                      Horário Livre
+                    </h3>
+
+                    <h1 class="my-12 text-center text-7xl font-light text-gray-900">
+                      35€<span class="text-3xl">/mês*</span>
+                    </h1>
+
+                    <hr className="my-2 text-gray-500" />
+
+                    <p class="mt-4 pl-3 text-sm text-gray-700">
+                      <p class=" text-gray-700"> SEGUNDA - SÁBADO</p>
+                      <p class=" text-gray-700"> 07:00 - 21:30</p>
+                      <p class="mt-3 text-gray-700">- ACESSO AO GINÁSIO</p>
+                      <p class="text-gray-700">
+                        - AULAS DE GRUPO INCLUÍDAS (requer marcação)
+                      </p>
+                      <p class=" mt-3 text-gray-700"> - TOALHAS GRATUITAS</p>
+                      <p class=" text-gray-700"> - CACIFOS</p>
+                      <p class=" text-gray-700">- AVALIAÇÃO NUTRICIONAL</p>
+                    </p>
+
+                    <button
+                      class="mt-9 block w-full rounded border bg-tq4 p-4 text-sm font-medium text-white transition hover:border hover:border-tq4 hover:bg-white hover:text-tq4"
+                      onClick={() => handlePlanClick(3)}
+                    >
+                      Selecionar
+                    </button>
+                    <p class="-mb-3 mt-2 text-xs text-gray-400 ">
+                      *pagamento anual de 420€
+                    </p>
                   </div>
-                  {/* </Link> */}
                 </li>
               </ul>
             </div>
@@ -169,9 +237,7 @@ function Home() {
       <section class=" flex justify-center" id="find">
         <div class="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
           <div class="max-w-xl text-left">
-            <h2 class="text-3xl font-bold sm:text-4xl ">
-              Descubra os nossos serviços
-            </h2>
+            <h2 class="text-3xl font-bold sm:text-4xl ">Os nossos serviços</h2>
 
             <p class="mt-4 font-thin text-gray-500">
               O nosso ginásio oferece uma grande variedade de serviços para que

@@ -9,79 +9,79 @@ import {
 import { addMinutes, format } from "date-fns";
 import { Link } from "react-router-dom";
 
-export default function ManageClasses() {
-  const [classes, setClasses] = useState([
+export default function Coaches() {
+  const [classes, setCoaches] = useState([
     {
       id: "0001",
       classType: "Natação",
+      name: "João Silva",
       Photo:
-        "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
-      name: "Natação Livre",
+        "https://img.europapress.es/fotoweb/fotonoticia_20150331134913-15031252329_420.jpg",
+      class: "Natação Livre, Ginastica Hídrica",
       schedule: ["monday", "tuesday", "wednesday"],
       hours: ["18:00", "18:00", "18:00"],
       duration: 60,
       pt: [1000, 1001, 1000],
-      price: [10, 10, 10],
     },
     {
       id: "0002",
-      classType: "Natação",
+      classType: "Personal Trainer",
+      name: "Manuel Gomes",
       Photo:
-        "https://piscinasmunicipais.pt/wp-content/uploads/2021/08/Complexo-de-Piscinas-Olimpicas.jpg",
-      name: "Ginastica Hídrica ",
+        "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
+      class: "Avaliação fisica, Acompanhamento individualizado",
       schedule: ["monday", "tuesday", "friday"],
       hours: ["18:00", "19:00", "11:00"],
       duration: 45,
       pt: [1000, 1002, 1001],
-      price: [10, 10, 10],
     },
     {
       id: "0003",
       classType: "Cardio",
+      name: "Cuca Beludo",
       Photo:
-        "https://petersfitnessgym.com/wp-content/uploads/2020/06/classe-cycling.jpg",
-      name: "Cycling",
+        "https://www.thehealthjournals.com/wp-content/uploads/2016/03/Sarah.jpg",
+      class: "Cycling, Steping",
       schedule: ["tuesday", "thursday", "friday"],
       hours: ["12:00", "14:00", "13:00"],
       duration: 55,
       pt: [1000, 1002, 1001],
-      price: [10, 10, 10],
     },
     {
       id: "0004",
-      classType: "Cardio",
+      classType: "Nutricionista",
+      name: "Ana Maria",
       Photo:
-        "https://media.istockphoto.com/id/1211637179/pt/foto/two-girls-doing-step-aerobics-in-the-gym.jpg?s=1024x1024&w=is&k=20&c=cFBkshSncF5CZUDFN9_t3A0DrUp2CFSoJpDf2e1zG0k=",
-      name: "Steping",
+        "https://embodyfitness.ae/wp-content/uploads/2022/08/Jess-Trainer-Image-scaled.jpg",
+      class: "Acompanhamento nutricional",
       schedule: ["monday", "tuesday", "saturday"],
       hours: ["11:00", "11:00", "11:00"],
       duration: 30,
       pt: [1000, 1002, 1001],
-      price: [10, 10, 10],
     },
     {
       id: "0005",
       classType: "Combate",
+      name: "Jorge Couto",
       Photo:
-        "https://previous-assets.womenshealth.pt/files/2019/10/iStock-1126503889.jpg",
-      name: "kickboxing",
+        "https://www.fitsquad.ca/wp-content/uploads/2020/11/Sathish-personal-trainer-profile.jpg",
+      class: "kickboxing, Boxe, Muay Thai",
       schedule: ["monday", "tuesday", "friday"],
       hours: ["18:00", "19:00", "11:00"],
       duration: 90,
       pt: [1000, 1002, 1001],
-      price: [10, 10, 10],
     },
     {
       id: "0006",
       classType: "Musculação",
+      name: "Armando Pinto",
       Photo:
-        "https://static.tuasaude.com/media/article/sk/cj/hipertrofia-muscular_31254_l.jpg",
-      name: "Hipertrofia",
+        "https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/2a970ee8-4320-4958-a8cb-e372de6c7ee6.jpg",
+      class: "Hipertrofia, Potencia, Resistencia",
       schedule: ["monday", "tuesday", "friday"],
       hours: ["18:00", "19:00", "11:00"],
       duration: 60,
       pt: [1000, 1002, 1001],
-      price: [10, 10, 10],
     },
   ]);
   const scheduleFormater = (train) => {
@@ -121,7 +121,7 @@ export default function ManageClasses() {
             />
             <input
               className="focus:ring-thc2 flex h-10 w-64 items-center rounded border border-tq1 bg-white pl-10 text-sm font-normal text-tq1 focus:outline-none focus:ring"
-              placeholder="Por id ou nome do cliente"
+              placeholder="Por id ou nome do treinador"
             />
           </div>
 
@@ -152,13 +152,16 @@ export default function ManageClasses() {
                 {" "}
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Categoria
-              </th>
-              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
                 Nome
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
-                Horário
+                Categoria
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Aulas
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Horário aulas
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Ações
@@ -176,10 +179,13 @@ export default function ManageClasses() {
                     className="h-16 w-16 rounded-full"
                   />
                 </td>
+                <td className="whitespace-nowrap px-4 py-2">{training.name}</td>
                 <td className="whitespace-nowrap px-4 py-2">
                   {training.classType}
                 </td>
-                <td className="whitespace-nowrap px-4 py-2">{training.name}</td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  {training.class}
+                </td>
                 <td className="whitespace-break-spaces px-4 py-2">
                   {scheduleFormater(training)}
                 </td>
@@ -196,7 +202,7 @@ export default function ManageClasses() {
                   <FontAwesomeIcon
                     icon={faTrash}
                     onClick={() => {
-                      setClasses(classes.filter((c) => c.id !== training.id));
+                      setCoaches(classes.filter((c) => c.id !== training.id));
                     }}
                     className="ml-2 h-6 w-6 cursor-pointer text-red-700"
                   />

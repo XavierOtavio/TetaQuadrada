@@ -452,9 +452,10 @@ const activities = [
 function Aulas(props) {
   const [isLogged, setIsLogged] = props.isLogged;
   const [selectedActivity, setSelectedActivity] = useState("todas");
+  const [choosedPlan, setChoosedPlan] = props.choosedPlan;
   const [openClassModal, setOpenClassModal] = useState(false);
-  const navigate = useNavigate();
   const [modalData, setModalData] = useState({});
+  const navigate = useNavigate();
 
   const onActChange = (e) => {
     if (e !== "todas") {
@@ -481,6 +482,7 @@ function Aulas(props) {
           <ClassModal
             openClassModal={[openClassModal, setOpenClassModal]}
             modalData={[modalData, setModalData]}
+            choosedPlan={[choosedPlan, setChoosedPlan]}
           />
         </div>
       ) : null}

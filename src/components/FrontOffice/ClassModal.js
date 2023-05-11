@@ -6,6 +6,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 function ClassModal(props) {
   const [openClassModal, setOpenClassModal] = props.openClassModal;
   const [modalData, setModalData] = props.modalData;
+  const [choosedPlan, setChoosedPlan] = props.choosedPlan;
 
   return (
     <div>
@@ -81,60 +82,62 @@ function ClassModal(props) {
                 modalData.avaliable ? "" : "sr-only"
               }`}
             >
-              <h3 class="col-span-6 mt-6 text-lg font-semibold text-gray-900">
-                Pagamento
-              </h3>
-              <fieldset class="col-span-6">
-                <legend class="block text-xs font-medium text-gray-700">
-                  Detalhes do Cartão
-                </legend>
+              <div className={`${choosedPlan === "plano3" && "sr-only"}`}>
+                <h3 class="col-span-6 mt-6 text-lg font-semibold text-gray-900">
+                  Pagamento
+                </h3>
+                <fieldset class="col-span-6">
+                  <legend class="block text-xs font-medium text-gray-700">
+                    Detalhes do Cartão
+                  </legend>
 
-                <div class="mt-1 -space-y-px rounded-md bg-white shadow-sm">
-                  <div>
-                    <label for="CardNumber" class="sr-only">
-                      {" "}
-                      Número do Cartão{" "}
-                    </label>
-
-                    <input
-                      type="text"
-                      id="CardNumber"
-                      placeholder="Número do Cartão"
-                      class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
-                    />
-                  </div>
-
-                  <div class="flex -space-x-px">
-                    <div class="flex-1">
-                      <label for="CardExpiry" class="sr-only">
+                  <div class="mt-1 -space-y-px rounded-md bg-white shadow-sm">
+                    <div>
+                      <label for="CardNumber" class="sr-only">
                         {" "}
-                        Card Expiry{" "}
+                        Número do Cartão{" "}
                       </label>
 
                       <input
                         type="text"
-                        id="CardExpiry"
-                        placeholder="Data de Validade"
+                        id="CardNumber"
+                        placeholder="Número do Cartão"
                         class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
                       />
                     </div>
 
-                    <div class="flex-1">
-                      <label for="CardCVC" class="sr-only">
-                        {" "}
-                        Card CVC{" "}
-                      </label>
+                    <div class="flex -space-x-px">
+                      <div class="flex-1">
+                        <label for="CardExpiry" class="sr-only">
+                          {" "}
+                          Card Expiry{" "}
+                        </label>
 
-                      <input
-                        type="text"
-                        id="CardCVC"
-                        placeholder="CVC"
-                        class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
-                      />
+                        <input
+                          type="text"
+                          id="CardExpiry"
+                          placeholder="Data de Validade"
+                          class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
+                        />
+                      </div>
+
+                      <div class="flex-1">
+                        <label for="CardCVC" class="sr-only">
+                          {" "}
+                          Card CVC{" "}
+                        </label>
+
+                        <input
+                          type="text"
+                          id="CardCVC"
+                          placeholder="CVC"
+                          class="mt-1 h-12 w-full rounded-md border border-gray-200 bg-white pl-3 text-sm text-gray-700 shadow-sm"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </fieldset>
+                </fieldset>
+              </div>
 
               {/* <!-- Modal footer --> */}
               <div class="space-x-2 rounded-b border-t border-gray-200 p-6">

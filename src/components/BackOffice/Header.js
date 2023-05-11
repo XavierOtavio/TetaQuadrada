@@ -6,11 +6,12 @@ import {
   faChartLine,
   faGraduationCap,
   faQuestion,
-  faUserCheck,
+  faUser,
   faDumbbell,
   faArrowRightFromBracket,
+  faPersonMilitaryPointing,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../images/thetaQuadradaRed.svg";
+import logo from "../images/logo.svg";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef();
@@ -80,18 +81,18 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          to="/dashboard/booking"
+          to="/dashboard/client"
           className={`flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500 ${
-            location.pathname === "/dashboard/booking" ? "bg-yellow-500" : ""
+            location.pathname === "/dashboard/client" ? "bg-yellow-500" : ""
           }`}
         >
-          <FontAwesomeIcon icon={faUserCheck} className="h-4" />
+          <FontAwesomeIcon icon={faUser} className="h-4" />
           <span
             className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
-            Marcações
+            Clientes
           </span>
         </Link>
         <Link
@@ -111,13 +112,13 @@ export default function Header() {
           to="#"
           className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
-          <FontAwesomeIcon icon={faQuestion} className="h-4" />
+          <FontAwesomeIcon icon={faPersonMilitaryPointing} className="h-4" />
           <span
             className={`delay-250 transition-opacity duration-500 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >
-            O que quiseres
+            Treinadores
           </span>
         </Link>
         <Link
