@@ -84,48 +84,51 @@ function Home() {
         />
       </div>
       <h1 class="mb-3 mt-2 text-center text-3xl font-extrabold text-tq1 sm:text-4xl">
-        O nosso Blog
+        Descobre os nossos planos
       </h1>
       <section className="bg-tq1">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
-            {/* <div class="grid place-content-center rounded bg-gray-100 p-6 sm:p-8">
-              <div class="mx-auto max-w-md text-center lg:text-left">
-                <header>
-                  <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
-                    Cozinhas
-                  </h2>
-
-                  <p class="mt-4 text-gray-500">
-                    Encontre uma grande variadade de designs e materiais para ir
-                    de encontro às suas espectativas
-                  </p>
-                </header>
-                <Link
-                  to="productsList"
-                  class="mt-8 inline-block rounded border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white transition hover:shadow focus:outline-none focus:ring"
-                >
-                  <h1>Veja aqi!</h1>
-                </Link>
-              </div>
-            </div> */}
-
             <div class="lg:col-span-3 lg:py-8">
               <ul class="grid grid-cols-3 gap-8">
                 <li>
-                  {/* <Link to="#" class="group block"> */}
-                  <img
-                    src="https://www.lifefitness.com.br/resource/image/801350/landscape_ratio4x3/768/576/8935d766930bd0cd16737674b05662cd/xl/brand-gym-cardio-equipment-treadmill-powermill-860.jpg"
-                    alt=""
-                    class="aspect-square w-full rounded object-cover"
-                  />
+                  <div class="group relative block overflow-hidden">
+                    <div class="relative border border-gray-100 bg-white p-6">
+                      <span class="whitespace-nowrap bg-tq4 px-3 py-1.5 text-xs font-medium">
+                        New
+                      </span>
+                      <h3 class="mt-4 text-center text-4xl font-medium text-gray-900">
+                        Finess Floris
+                      </h3>
+                      <h3 class="mt-2 text-center text-xl font-medium text-gray-900">
+                        Tempo Parcial
+                      </h3>
 
-                  <div class="mt-3">
-                    <h3 class="font-medium text-white group-hover:underline group-hover:underline-offset-4">
-                      Cardio
-                    </h3>
+                      <h1 class="mt-12 text-center text-6xl font-light text-gray-900">
+                        15€/mês
+                      </h1>
+
+                      <hr className="mb-2 mt-2 text-gray-500" />
+
+                      <p class="mt-1.5 pl-3 text-sm text-gray-700">
+                        <p class=" text-gray-700"> SEGUNDA - SEXTA</p>
+                        <p class=" text-gray-700"> 09:00 - 11:30</p>
+                        <p class=" text-gray-700">14:00 - 17:00</p>
+                        <p class="mt-1.5 text-gray-700">
+                          ACESSO A TODOS OS CLUBES
+                        </p>
+                        <p class=" text-gray-700">
+                          (exepto clubes com piscina)
+                        </p>
+                      </p>
+
+                      <form class="mt-4">
+                        <button class="block w-full rounded bg-tq4 p-4 text-sm font-medium transition hover:scale-105">
+                          Add to Cart
+                        </button>
+                      </form>
+                    </div>
                   </div>
-                  {/* </Link> */}
                 </li>
                 <li>
                   {/* <Link to="#" class="group block"> */}
