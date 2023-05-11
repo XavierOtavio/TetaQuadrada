@@ -92,7 +92,7 @@ function ClassModal(props) {
             >
               <div className={`${choosedPlan === "plano3" && "sr-only"}`}>
                 <h3 class="col-span-6 -mb-4 mt-6 text-right text-xs text-gray-400">
-                  *Efetuar o pagamento na página "A Minha Conta"
+                  *Efetuar o pagamento na página "Perfil / A Minha Conta"
                 </h3>
               </div>
 
