@@ -13,7 +13,7 @@ export default function CoachesFront(props) {
 
           <p class="mt-4 max-w-md text-gray-500">
             Aqui pode ter uma visão geral dos treinadores que trabalham
-            connosco. Assim pode ficar a conhece-los melhor e escolher a
+            connosco. Assim pode ficar a conhecer-nos melhor e escolher a
             especialidade que mais se adequa a si.
           </p>
         </header>
