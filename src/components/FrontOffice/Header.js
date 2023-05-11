@@ -37,12 +37,6 @@ export default function Header(props) {
           </button>
         </Link>
 
-        <Link to="/blog" className="">
-          <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
-            Blog
-          </button>
-        </Link>
-
         <Link to="/classes" className="">
           <button
             className={`${
