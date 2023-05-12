@@ -109,7 +109,7 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          to="#"
+          to="/dashboard/coaches"
           className="flex h-12 w-full cursor-pointer items-center justify-start gap-4 rounded-lg p-4 hover:bg-yellow-500"
         >
           <FontAwesomeIcon icon={faPersonMilitaryPointing} className="h-4" />
