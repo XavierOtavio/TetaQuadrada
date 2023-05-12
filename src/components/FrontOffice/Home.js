@@ -37,7 +37,7 @@ function Home(props) {
           default:
             break;
         }
-        navigate("/myaccount");
+        navigate("/payments");
       }
     } else {
       navigate("/login");
@@ -131,7 +131,8 @@ function Home(props) {
       <section className="bg-tq1">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
-            <div class="lg:col-span-3 lg:py-8">s
+            <div class="lg:col-span-3 lg:py-8">
+              s
               <ul class="grid grid-cols-3 gap-8">
                 <li>
                   <div class="group relative block overflow-hidden">

@@ -25,8 +25,8 @@ export default function PlanErrorModal(props) {
           {/* <!-- Modal body --> */}
           <div className="my-16 text-center">
             JÁ TEM UM PLANO SELECIONADO
-            <br /> Para continuar ancele o seu plano atual na página "Perfil / A
-            Minha Conta"
+            <br /> Para trocar de plano cancele o seu plano atual na página
+            "Perfil / A Minha Conta"
           </div>
 
           {/* <!-- Modal footer --> */}
