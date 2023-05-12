@@ -235,13 +235,13 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  Armando Pinto
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> Musculação </span>
                 </p>
               </div>
             </a>
@@ -256,13 +256,13 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  Jorge Couto
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> Combate </span>
                 </p>
               </div>
             </a>
@@ -277,13 +277,13 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  Ana Maria
                 </h3>
 
                 <p class="mt-2">
-                  <span class="sr-only"> Regular Price </span>
+                  <span class="sr-only"> </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> Nutrição </span>
                 </p>
               </div>
             </a>
@@ -299,13 +299,13 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  Cuca Beludo
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> Cardio </span>
                 </p>
               </div>
             </a>
@@ -321,13 +321,16 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  Manuel Gomes
                 </h3>
 
                 <p class="mt-2">
-                  <span class="sr-only"> Regular Price </span>
+                  <span class="sr-only"> R </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900">
+                    {" "}
+                    Personal Trainer{" "}
+                  </span>
                 </p>
               </div>
             </a>
@@ -343,13 +346,13 @@ export default function CoachesFront(props) {
 
               <div class="relative bg-white pt-3">
                 <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
+                  João Sousa
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> Natação </span>
                 </p>
               </div>
             </a>
