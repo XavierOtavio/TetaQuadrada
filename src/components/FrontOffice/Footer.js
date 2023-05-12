@@ -67,18 +67,19 @@ export default function Footer() {
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-              &quot;O ginásio é incrível! As instalações são excelentes e a equipe
-                é muito acolhedora e atenciosa. O ambiente é descontraído e não
-                intimidador, o que me ajudou a me sentir mais à vontade enquanto
-                me exercito. As aulas são muito motivantes e os treinadores são
-                muito profissionais e bem treinados. Definitivamente recomendo!&quot;
+                &quot;O ginásio é incrível! As instalações são excelentes e a
+                equipe é muito acolhedora e atenciosa. O ambiente é descontraído
+                e não intimidador, o que me ajudou a me sentir mais à vontade
+                enquanto me exercito. As aulas são muito motivantes e os
+                treinadores são muito profissionais e bem treinados.
+                Definitivamente recomendo!&quot;
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
-                  src="https://i2-prod.dailystar.co.uk/incoming/article15591240.ece/ALTERNATES/s1200b/2_RONNIE-COLEMAN-BODYBUILDER-839493.jpg"
+                  src="https://img.freepik.com/free-photo/senior-woman-hospital-patient-cured-from-covid-19_53876-148033.jpg"
                   class="h-16 w-16 rounded-full object-cover"
                 />
 
@@ -126,24 +127,25 @@ export default function Footer() {
                     </svg>
                   </div>
 
-                  <p class="mt-1 text-lg font-medium text-gray-800">John Doe</p>
+                  <p class="mt-1 text-lg font-medium text-gray-800">
+                    Maria Adelaide
+                  </p>
                 </div>
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-              &quot;Eu amo vir a este ginásio! A variedade de equipamentos é
+                &quot;Eu amo vir a este ginásio! A variedade de equipamentos é
                 excelente e sempre há algo novo para experimentar. Os
-                instrutores de aula são fantásticos e sempre incentivam os
-                membros a se desafiarem. A equipe é muito prestativa e sempre
-                está disposta a ajudar com quaisquer perguntas ou dúvidas que eu
-                tenha. Não posso recomendar o suficiente!&quot;
+                instrutores de aula são fantásticos e jeitosos. A equipe é muito
+                prestativa e sempre está disposta a ajudar com quaisquer
+                perguntas ou dúvidas que eu tenha. Recomento MUITO!!!&quot;
               </p>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-400 p-8 text-justify">
               <div class="flex items-center gap-4">
                 <img
                   alt="Man"
-                  src="https://img.freepik.com/vetores-premium/bodybuilder-treinador-rigoroso_701900-17.jpg?w=2000"
+                  src="https://images.unsplash.com/photo-1573878416776-932ce6911da2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                   class="h-16 w-16 rounded-full object-cover"
                 />
 
@@ -198,7 +200,7 @@ export default function Footer() {
               </div>
 
               <p class="mt-4 line-clamp-2 text-gray-800 sm:line-clamp-none">
-              &quot;Adorei a atmosfera deste ginásio. É sempre limpo e bem
+                &quot;Adorei a atmosfera deste ginásio. É sempre limpo e bem
                 organizado. Os instrutores de aula são muito simpáticos e
                 encorajadores, o que me ajudou a alcançar meus objetivos de
                 fitness. Também gostei de poder usar o aplicativo do ginásio
@@ -213,7 +215,7 @@ export default function Footer() {
             <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
               © 2023{" "}
               <a href="https://flowbite.com/" class="hover:underline">
-                Hotel THC™
+                Ginásio TQ™
               </a>
               . Todos os direitos reservados.
             </span>

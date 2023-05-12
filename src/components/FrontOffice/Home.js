@@ -22,6 +22,7 @@ function Home(props) {
     if (isLogged) {
       if (choosedPlan !== "") {
         setOpenPlanErrorModal(true);
+        console.log("modalOPEN");
       } else {
         switch (plan) {
           case 1:
@@ -36,8 +37,8 @@ function Home(props) {
           default:
             break;
         }
+        navigate("/payments");
       }
-      navigate("/myaccount");
     } else {
       navigate("/login");
     }
@@ -47,7 +48,6 @@ function Home(props) {
     <div>
       <section class="relative bg-[url(https://www.noticiasmagazine.pt/files/2021/11/strong-man-training-in-gym-1200x675.jpg)] bg-cover bg-center bg-no-repeat">
         <div class="absolute inset-0 bg-black/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-tq1/95 sm:to-black/50"></div>
-
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div class="max-w-xl text-center sm:text-left">
             <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
@@ -122,10 +122,17 @@ function Home(props) {
       >
         Descobre os nossos planos
       </h1>
+      {openPlanErrorModal ? (
+        <PlanErrorModal
+          className="absolute z-10 "
+          openPlanErrorModal={[openPlanErrorModal, setOpenPlanErrorModal]}
+        />
+      ) : null}
       <section className="bg-tq1">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
             <div class="lg:col-span-3 lg:py-8">
+              s
               <ul class="grid grid-cols-3 gap-8">
                 <li>
                   <div class="group relative block overflow-hidden">
@@ -402,9 +409,6 @@ function Home(props) {
             class="aspect-video w-full object-cover"
           />
         </div>
-      </div>
-      <div className="fixed">
-        <PlanErrorModal />
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export default function Header(props) {
           </button>
         </Link>
 
-        <Link to="/trainers" className="">
+        <Link to="/coachesfront" className="">
           <button class="hover:border-thc1 ml-2 block rounded px-10 py-3 font-medium text-tq2 hover:bg-tq4 hover:text-white">
             Treinadores
           </button>
@@ -108,7 +108,7 @@ export default function Header(props) {
                   </li>
                   <li>
                     <Link
-                      to="/user"
+                      to="/payments"
                       className="inline-flex w-full items-center justify-start gap-2 px-4 py-2 hover:bg-gray-100"
                     >
                       <FontAwesomeIcon
