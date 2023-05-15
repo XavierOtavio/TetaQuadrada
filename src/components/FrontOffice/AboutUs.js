@@ -3,35 +3,39 @@ import React from "react";
 function AboutUs() {
   return (
     <div>
-      <section class="bg-gray-100">
-        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <section class="">
+        <div class="mx-auto max-w-screen-2xl px-4 py-24 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
             <div class="lg:col-span-2 lg:py-12">
-              <p class="max-w-xl text-lg">
-                At the same time, the fact that we are wholly owned and totally
-                independent from manufacturer and other group control gives you
-                confidence that we will only recommend what is right for you.
+              <h1 class="mt-2 text-3xl font-extrabold text-tq1 sm:text-4xl">
+                Quem somos? O que nos move?
+              </h1>
+              <p class="mt-8 max-w-xl text-lg">
+                Somos uma equipa de profissionais de saúde, com formação em
+                áreas distintas, que se uniu para criar um espaço onde o
+                bem-estar físico e mental é o foco principal.
               </p>
 
               <div class="mt-8">
-                <a href="" class="text-2xl font-bold text-pink-600">
-                  0151 475 4450
-                </a>
+                <div class="text-2xl font-bold text-tq4">+351 969 696 969</div>
 
                 <address class="mt-2 not-italic">
-                  282 Kevin Brook, Imogeneborough, CA 58517
+                  Rua das Canastras nº689, Viseu, Portugal 3500-998
                 </address>
               </div>
             </div>
 
             <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
               <form action="" class="space-y-4">
+                <div class=" grid grid-cols-1 gap-4 pb-4 text-2xl font-bold sm:grid-cols-2">
+                  Contacte-nos
+                </div>
                 <div>
                   <label class="sr-only" for="name">
-                    Name
+                    Nome
                   </label>
                   <input
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    class="w-full rounded-lg border border-gray-200 p-3 text-sm"
                     placeholder="Name"
                     type="text"
                     id="name"
@@ -44,8 +48,8 @@ function AboutUs() {
                       Email
                     </label>
                     <input
-                      class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Email address"
+                      class="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                      placeholder="Email"
                       type="email"
                       id="email"
                     />
@@ -56,8 +60,8 @@ function AboutUs() {
                       Phone
                     </label>
                     <input
-                      class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                      placeholder="Phone Number"
+                      class="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                      placeholder="Telemóvel"
                       type="tel"
                       id="phone"
                     />
@@ -76,10 +80,10 @@ function AboutUs() {
 
                     <label
                       for="option1"
-                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-tq4 peer-checked:bg-tq4 peer-checked:text-white"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 1 </span>
+                      <span class="text-sm font-medium"> Geral </span>
                     </label>
                   </div>
 
@@ -94,10 +98,10 @@ function AboutUs() {
 
                     <label
                       for="option2"
-                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-tq4 peer-checked:bg-tq4 peer-checked:text-white"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 2 </span>
+                      <span class="text-sm font-medium"> Planos </span>
                     </label>
                   </div>
 
@@ -112,22 +116,22 @@ function AboutUs() {
 
                     <label
                       for="option3"
-                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
+                      class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-tq4 peer-checked:bg-tq4 peer-checked:text-white"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 3 </span>
+                      <span class="text-sm font-medium"> Aulas </span>
                     </label>
                   </div>
                 </div>
 
                 <div>
                   <label class="sr-only" for="message">
-                    Message
+                    Mensagem
                   </label>
 
                   <textarea
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Message"
+                    class="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                    placeholder="Mensagem"
                     rows="8"
                     id="message"
                   ></textarea>
@@ -136,9 +140,9 @@ function AboutUs() {
                 <div class="mt-4">
                   <button
                     type="submit"
-                    class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                    class="inline-block w-full rounded-lg border border-tq4 bg-tq4  px-10 py-3 font-medium text-white hover:bg-white hover:text-tq4 sm:w-auto"
                   >
-                    Send Enquiry
+                    Enviar
                   </button>
                 </div>
               </form>

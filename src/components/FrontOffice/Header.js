@@ -122,18 +122,20 @@ export default function Header(props) {
                   </li>
                 </ul>
                 <div className="py-2">
-                  <button
-                    type="submit"
-                    onClick={handleLogout}
-                    className="inline-flex w-full items-center justify-start gap-2 px-4 py-1 hover:bg-gray-100"
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowRightFromBracket}
-                      color="black"
-                      className="mx-2"
-                    />
-                    Sair
-                  </button>
+                  <Link to="/">
+                    <button
+                      type="submit"
+                      onClick={handleLogout}
+                      className="inline-flex w-full items-center justify-start gap-2 px-4 py-1 hover:bg-gray-100"
+                    >
+                      <FontAwesomeIcon
+                        icon={faArrowRightFromBracket}
+                        color="black"
+                        className="mx-2"
+                      />
+                      Sair
+                    </button>
+                  </Link>
                 </div>
               </div>
             )}
