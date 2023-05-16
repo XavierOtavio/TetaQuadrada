@@ -6,6 +6,7 @@ import {
   faGear,
   faArrowRightFromBracket,
   faBookmark,
+  faEuroSign,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.svg";
 
@@ -112,27 +113,29 @@ export default function Header(props) {
                       className="inline-flex w-full items-center justify-start gap-2 px-4 py-2 hover:bg-gray-100"
                     >
                       <FontAwesomeIcon
-                        icon={faGear}
+                        icon={faEuroSign}
                         color="black"
                         className="w-6"
                       />
-                      O meu perfil
+                      Pagamentos
                     </Link>
                   </li>
                 </ul>
                 <div className="py-2">
-                  <button
-                    type="submit"
-                    onClick={handleLogout}
-                    className="inline-flex w-full items-center justify-start gap-2 px-4 py-1 hover:bg-gray-100"
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowRightFromBracket}
-                      color="black"
-                      className="mx-2"
-                    />
-                    Sair
-                  </button>
+                  <Link to="/">
+                    <button
+                      type="submit"
+                      onClick={handleLogout}
+                      className="inline-flex w-full items-center justify-start gap-2 px-4 py-1 hover:bg-gray-100"
+                    >
+                      <FontAwesomeIcon
+                        icon={faArrowRightFromBracket}
+                        color="black"
+                        className="mx-2"
+                      />
+                      Sair
+                    </button>
+                  </Link>
                 </div>
               </div>
             )}

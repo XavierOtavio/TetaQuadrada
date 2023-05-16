@@ -16,6 +16,7 @@ import Coaches from "./components/BackOffice/Coaches";
 import CoachesFront from "./components/FrontOffice/CoachesFront";
 import MyAccount from "./components/FrontOffice/MyAccount";
 import Payments from "./components/FrontOffice/Payments";
+import AboutUs from "./components/FrontOffice/AboutUs";
 import CoachDetails from "./components/BackOffice/CoachDetails";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
               />
             }
           />
+          <Route path="about" element={<AboutUs />} />
           <Route
             path="coachesfront"
             element={<CoachesFront isLogged={[isLogged, setIsLogged]} />}
