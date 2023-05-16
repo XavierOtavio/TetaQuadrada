@@ -16,6 +16,7 @@ import Coaches from "./components/BackOffice/Coaches";
 import CoachesFront from "./components/FrontOffice/CoachesFront";
 import MyAccount from "./components/FrontOffice/MyAccount";
 import Payments from "./components/FrontOffice/Payments";
+import CoachDetails from "./components/BackOffice/CoachDetails";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -80,6 +81,7 @@ function App() {
           <Route path="modalities" element={<Modalities />} />
           <Route path="modalities/:id" element={<AddEditModality />} />
           <Route path="coaches" element={<Coaches />} />
+          <Route path="coaches/:id" element={<CoachDetails />} />
         </Route>
       </Routes>
     </div>
