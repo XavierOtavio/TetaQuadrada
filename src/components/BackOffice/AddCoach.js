@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function CoachDetails() {
+export default function AddCoach() {
   return (
     <div className="mx-auto max-w-6xl rounded-md bg-white p-6 shadow-md">
-      <h1 className="mb-4 text-2xl font-bold">Detalhes do Treinador</h1>
+      <h1 className="mb-4 text-2xl font-bold">Adicionar do Treinador</h1>
       <div className="mb-4 flex justify-between">
         <div className="w-1/4">
           <img
-            src="https://img.europapress.es/fotoweb/fotonoticia_20150331134913-15031252329_420.jpg"
+            src="https://cdn.icon-icons.com/icons2/510/PNG/512/person-add_icon-icons.com_50077.png"
             alt="Foto do Cliente"
             className="w-full rounded-md shadow-md"
           />
@@ -24,7 +24,6 @@ export default function CoachDetails() {
               type="text"
               id="nome-completo"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="João Miguel Sousa"
             />
           </div>
           <div className="mb-2">
@@ -38,7 +37,6 @@ export default function CoachDetails() {
               type="tel"
               id="telefone"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="912345678"
             />
           </div>
           <div className="mb-2">
@@ -52,7 +50,6 @@ export default function CoachDetails() {
               type="email"
               id="email"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="teste@gmail.com"
             />
           </div>
           <div className="mb-2">
@@ -66,7 +63,6 @@ export default function CoachDetails() {
               type="text"
               id="morada"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="Rua Quinta da Alagoa Lote 6 1º D"
             />
           </div>
           <div className="mb-2">
@@ -77,7 +73,6 @@ export default function CoachDetails() {
               type="text"
               id="nif"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="123456789"
             />
           </div>
           <div className="mb-2">
@@ -88,8 +83,6 @@ export default function CoachDetails() {
               type="text"
               id="nif"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="Segunda das 18:00h às 19:00h/ Terça das 18:00h às
-              19:00h/ Quarta das 18:00h às 19:00h"
             />
           </div>
           <div className="mb-2">
@@ -100,7 +93,6 @@ export default function CoachDetails() {
               type="text"
               id="nif"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="Licenciatura em Desporto e Educação Física"
             />
           </div>
           <div className="mb-2">
@@ -111,7 +103,6 @@ export default function CoachDetails() {
               type="text"
               id="nif"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="01/09/2021"
             />
           </div>
           <div className="mb-2">
@@ -122,7 +113,6 @@ export default function CoachDetails() {
               type="text"
               id="nif"
               className="w-full rounded-md bg-gray-200 p-2"
-              value="980€"
             />
           </div>
         </div>

@@ -126,7 +126,7 @@ export default function Coaches() {
           </div>
 
           <div className="flex h-full w-full items-center justify-end">
-            <Link to={`/dashboard/classes/${null}`} state={{ data: null }}>
+            <Link to="/dashboard/coaches/addcoach">
               <button
                 type="button"
                 className="relative flex h-10 w-32 items-center rounded border border-tq1 bg-white px-3 text-sm font-normal text-tq1 shadow"
@@ -190,10 +190,7 @@ export default function Coaches() {
                   {scheduleFormater(training)}
                 </td>
                 <td className="whitespace-nowrap px-4 py-2">
-                  <Link
-                    to={`/dashboard/coaches/${training.id}`}
-                    state={{ data: training }}
-                  >
+                  <Link to="/dashboard/coaches/details">
                     <FontAwesomeIcon
                       icon={faEye}
                       className="h-6 w-6 cursor-pointer text-blue-700"
