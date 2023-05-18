@@ -191,7 +191,7 @@ export default function Coaches() {
                 </td>
                 <td className="whitespace-nowrap px-4 py-2">
                   <Link
-                    to={`/dashboard/classes/${training.id}`}
+                    to={`/dashboard/coaches/${training.id}`}
                     state={{ data: training }}
                   >
                     <FontAwesomeIcon

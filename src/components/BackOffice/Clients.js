@@ -9,6 +9,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { subDays } from "date-fns";
 
 const CHECKBOX_STATES = {
   Checked: "Checked",
@@ -35,6 +36,7 @@ export default function Client() {
       id: 1,
       name: "João",
       gender: "M",
+      birthdate: "1999-01-01",
       debt: -42.5,
       contacto: "912853988",
       plan: "",
@@ -45,26 +47,29 @@ export default function Client() {
       id: 2,
       name: "Maria",
       gender: "F",
+      birthdate: "2010-02-01",
       debt: 0,
       contacto: "912456788",
       plan: "plano3",
-      lastSeen: "1",
+      lastSeen: "3",
       email: "maria@mail.org",
     },
     {
       id: 3,
       name: "Daniel",
       gender: "M",
+      birthdate: "2001-10-23",
       debt: 0,
       contacto: "912873478",
       plan: "plano1",
-      lastSeen: "7",
+      lastSeen: "9",
       email: "daniel@mail.org",
     },
     {
       id: 4,
       name: "Carlos",
       gender: "M",
+      birthdate: "1995-05-05",
       debt: 0,
       contacto: "914455678",
       plan: "plano2",
@@ -75,6 +80,7 @@ export default function Client() {
       id: 5,
       name: "Marcos",
       gender: "M",
+      birthdate: "1990-01-01",
       debt: 0,
       contacto: "912736478",
       plan: "plano3",
@@ -88,7 +94,7 @@ export default function Client() {
       <div className="col-start-2 col-end-12 row-start-1 row-end-2 h-full">
         <div className="bg-thc3 inline-flex h-full w-full items-center justify-between rounded-xl bg-tq2 p-8 px-10 shadow-inner ">
           <div className="flex flex-col justify-start">
-            <span className="ml-4 text-left text-xs font-bold sm:sr-only">
+            <span className="ml-4 text-left text-xs font-bold sm:hidden xl:block">
               Filtrar por ID ou nome do cliente:
             </span>
             <div className="flex h-full w-full items-center">
@@ -97,17 +103,17 @@ export default function Client() {
                 className="text-thc2 absolute ml-2 h-6 w-6"
               />
               <input
-                className="flex h-10 w-64 items-center rounded border border-tq1 bg-white pl-10 text-sm font-normal text-tq1 focus:outline-none focus:ring sm:w-32"
+                className="flex h-10 w-32 items-center rounded border border-tq1 bg-white pl-10 text-sm font-normal text-tq1 focus:outline-none focus:ring xl:w-64"
                 placeholder="John Johnson"
               />
             </div>
           </div>
           <div className="flex w-full  items-center justify-center text-sm">
             <div className="flex flex-col justify-start">
-              <span className="ml-4 text-left text-xs font-bold sm:sr-only">
+              <span className="ml-4 text-left text-xs font-bold sm:hidden xl:block">
                 Filtrar por subscrição:
               </span>
-              <select className="flex h-10 w-64 items-center rounded border border-tq1 bg-white px-3 text-sm font-normal text-tq1 focus:outline-none focus:ring sm:w-32">
+              <select className="flex h-10 w-32 items-center rounded border border-tq1 bg-white px-3 text-sm font-normal text-tq1 focus:outline-none focus:ring xl:w-64">
                 <option>Todos</option>
                 <option value="plano1">Finess Floris</option>
                 <option value="plano2">Morks Gorlassions</option>
@@ -151,12 +157,23 @@ export default function Client() {
         <table className="bg-thc4 h-full w-full divide-y-2 rounded-xl bg-tq2 p-8 text-sm shadow-inner">
           <thead>
             <tr>
-              <th className="whitespace-nowrap px-4 py-2 text-left font-medium  text-tq1"></th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium  text-tq1">
+                Status
+              </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
                 Nome
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Contactos
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Idade
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
                 Plano
+              </th>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
+                Última Visita
               </th>
               <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-tq1">
                 Dívida?
@@ -172,24 +189,85 @@ export default function Client() {
                 <td className="whitespace-nowrap px-4 py-2">
                   <div
                     className={`h-6 w-6 rounded-full  
-                    ${client.debt !== 0 && "bg-red-600"}
-                    ${client.lastSeen > 31 && "bg-yellow-500"}
-                    ${client.lastSeen > 7 ? "bg-blue-500" : "bg-green-500"}
+                    ${
+                      client.debt !== 0
+                        ? "bg-red-500"
+                        : client.lastSeen > 31
+                        ? "bg-yellow-500"
+                        : client.lastSeen > 14
+                        ? "bg-blue-500"
+                        : "bg-green-500"
+                    }
                     `}
                   />
                 </td>
 
                 <td className="whitespace-nowrap px-4 py-2">{client.name}</td>
                 <td className="whitespace-nowrap px-4 py-2">
+                  <Link to={`tel:${client.contacto}`}>
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      className="ml-2 h-6 w-6 cursor-pointer text-green-700"
+                    />
+                  </Link>
+                  <Link to={`mailto:${client.email}`}>
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="ml-2 h-6 w-6 cursor-pointer text-yellow-700"
+                    />
+                  </Link>
+                </td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  <div className="flex flex-col">
+                    <p>
+                      {parseInt(new Date().getFullYear()) -
+                        parseInt(client.birthdate.slice(0, 4)) +
+                        " anos"}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {client.birthdate.slice(8, 10) +
+                        "/" +
+                        client.birthdate.slice(5, 7) +
+                        "/" +
+                        client.birthdate.slice(0, 4)}
+                    </p>
+                  </div>
+                </td>
+                <td className="whitespace-nowrap px-4 py-2">
                   {client.plan === "plano1" && "Finess Floris"}
                   {client.plan === "plano2" && "Morks Gorlassions"}
                   {client.plan === "plano3" && "Mifas Masters"}
                   {client.plan === "" && "S/ subscrição"}
                 </td>
+                <td className="whitespace-nowrap px-4 py-2">
+                  <div className="flex flex-col">
+                    <p>
+                      {client.lastSeen > 31 &&
+                        Math.floor(client.lastSeen / 31) +
+                          " meses e " +
+                          (client.lastSeen % 31) +
+                          " dias"}
+                      {client.lastSeen < 31 &&
+                        client.lastSeen >= 7 &&
+                        Math.floor(client.lastSeen / 7) +
+                          " semanas" +
+                          (client.lastSeen % 7 !== 0
+                            ? " e " + (client.lastSeen % 7) + " dias"
+                            : "")}
+                      {client.lastSeen < 7 && client.lastSeen + " dias"}
+                      {client.lastSeen === 0 && "Hoje"}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {subDays(new Date(), client.lastSeen).toLocaleDateString(
+                        "pt-PT"
+                      )}
+                    </p>
+                  </div>
+                </td>
                 <td className={`whitespace-break-spaces px-4 py-2`}>
                   <span
                     className={`w-full rounded-full px-4 py-2 text-xs font-medium text-white ${
-                      client.debt !== 0 ? "bg-red-600" : "bg-green-500"
+                      client.debt !== 0 ? "bg-red-500" : "bg-green-500"
                     }`}
                   >
                     {client.debt === 0 && "Não"}
@@ -206,18 +284,6 @@ export default function Client() {
                       className="h-6 w-6 cursor-pointer text-blue-700"
                     />
                   </Link>
-                  <Link to={`tel:${client.contacto}`}>
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      className="ml-2 h-6 w-6 cursor-pointer text-green-700"
-                    />
-                  </Link>
-                  <Link to={`mailto:${client.email}`}>
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="ml-2 h-6 w-6 cursor-pointer text-yellow-700"
-                    />
-                  </Link>
                   <FontAwesomeIcon
                     icon={faTrash}
                     onClick={() => {
@@ -231,7 +297,7 @@ export default function Client() {
           </tbody>
         </table>
         <div className="inline-flex w-full items-baseline justify-center">
-          <div className="h-2 w-2 rounded-full bg-red-600" />
+          <div className="h-2 w-2 rounded-full bg-red-500" />
           <span className="ml-1 text-sm">- Com dívidas</span>
           <div className="ml-8 h-2 w-2 rounded-full bg-yellow-500" />
           <span className="ml-1 text-sm">- Inativo há mais de 1 mês</span>
