@@ -103,7 +103,7 @@ export default function Dashboard() {
             <div className="flex h-full w-full flex-col gap-4 rounded-xl bg-tq1 p-4">
               <div className="inline-flex items-center justify-between">
                 <div className="flex flex-col items-start justify-center">
-                  <p className="text-3xl font-bold text-white">€12 345.67</p>
+                  <p className="text-3xl font-bold text-white">€3642.67</p>
                   <p className="text-sm font-thin text-stone-100">
                     Pagamentos esta semana
                   </p>
